@@ -1,0 +1,1594 @@
+[
+  {
+    "question": "Dlaczego 'fotografia dnia' jest kluczowym elementem przed wdrożeniem AI?",
+    "a": "Pozwala na udokumentowanie pracy dla działu HR",
+    "b": "Pomaga wyjść z trybu 'autopilota' i zidentyfikować realne pożeracze czasu",
+    "c": "Jest wymagana do uzyskania certyfikatu Google",
+    "d": "Pozwala na automatyczne wygenerowanie promptów przez Gemini",
+    "correct": "b"
+  },
+  {
+    "question": "Na jakie cztery kategorie warto rozbić zadania podczas analizy procesów?",
+    "a": "Proste, złożone, tanie, drogie",
+    "b": "Kreatywne, analityczne, administracyjne, komunikacyjne",
+    "c": "Tekstowe, wizualne, dźwiękowe, programistyczne",
+    "d": "Strategiczne, operacyjne, taktyczne, techniczne",
+    "correct": "b"
+  },
+  {
+    "question": "W skali 1-5 dotyczącej powtarzalności struktury zadania, co oznacza ocena '5'?",
+    "a": "Zadanie jest całkowicie unikalne za każdym razem",
+    "b": "Zadanie ma podobną strukturę, ale inne treści",
+    "c": "Wynik pracy jest za każdym razem identyczny strukturalnie",
+    "d": "Zadanie wymaga najwyższego poziomu kreatywności",
+    "correct": "c"
+  },
+  {
+    "question": "Która z metod identyfikacji zadań do AI wykorzystuje funkcję 'deep research' w Gemini?",
+    "a": "Metoda manualnej listy zadań",
+    "b": "Metoda wsparcia chatbotem AI (prompt asystujący)",
+    "c": "Metoda analizy maili, dysku i kalendarza przez źródła wewnętrzne",
+    "d": "Metoda 'nagrody pingwina'",
+    "correct": "c"
+  },
+  {
+    "question": "Co stanowi fundament 'Matrycy Decyzyjnej'?",
+    "a": "Wybór najdroższego dostępnego modelu LLM",
+    "b": "Drabinka czterech szczebli wsparcia AI",
+    "c": "Rezygnacja z pracy ludzkiej na rzecz autonomii agentów",
+    "d": "Wykorzystanie wyłącznie narzędzi typu 'no-code'",
+    "correct": "b"
+  },
+  {
+    "question": "Jaki jest domyślny punkt startowy w Matrycy Decyzyjnej dla jednorazowego zadania?",
+    "a": "Poziom 4: Agent AI",
+    "b": "Poziom 3: Automatyzacja workflow",
+    "c": "Poziom 2: Assistant AI (np. Gems)",
+    "d": "Poziom 1: Prompt",
+    "correct": "d"
+  },
+  {
+    "question": "Kiedy należy przejść z Poziomu 1 (Prompt) na Poziom 2 (Assistant)?",
+    "a": "Gdy zadanie jest wykonywane codziennie i wymaga łączenia 5 aplikacji",
+    "b": "Gdy powtarzamy ten sam typ zadania z różnymi danymi wejściowymi",
+    "c": "Gdy chcemy, aby AI samo podejmowało decyzje o wyborze narzędzi",
+    "d": "Gdy koszt tokenów w zwykłym czacie staje się zbyt wysoki",
+    "correct": "b"
+  },
+  {
+    "question": "Czym charakteryzuje się Poziom 3 w Matrycy Decyzyjnej?",
+    "a": "Jest to wieloetapowy proces łączący różne narzędzia (np. Make.com)",
+    "b": "Polega na napisaniu jednego, bardzo długiego promptu",
+    "c": "To system, który sam planuje i adaptuje się do błędów",
+    "d": "To wyłącznie konfiguracja asystenta Custom GPT",
+    "correct": "a"
+  },
+  {
+    "question": "Jaka jest 'Zasada Minimalnej Złożoności' w kontekście wdrożeń AI?",
+    "a": "Zawsze wybieraj najnowszą dostępną technologię (State of the Art)",
+    "b": "Najlepsze rozwiązanie to najprostsze, które skutecznie działa",
+    "c": "Każdy proces należy docelowo przekształcić w autonomicznego agenta",
+    "d": "Należy minimalizować liczbę promptów na rzecz kodu w Pythonie",
+    "correct": "b"
+  },
+  {
+    "question": "Co według Kamila Stanucha stanowi 90% rozwiązań sprzedawanych obecnie jako 'agenci AI'?",
+    "a": "Prawdziwe, autonomiczne systemy planujące",
+    "b": "Dobrze zaprojektowane automatyzacje (Poziom 3) z wplecionym modelem LLM",
+    "c": "Proste chatboty oparte na jednym prompcie",
+    "d": "Narzędzia klasy 'Digital Twin'",
+    "correct": "b"
+  },
+  {
+    "question": "Która cecha jest unikalna dla prawdziwego Agenta AI (Poziom 4) w porównaniu do automatyzacji?",
+    "a": "Możliwość wysyłania maili przez API",
+    "b": "Łączenie się z arkuszem Google Sheets",
+    "c": "Samodzielne planowanie kroków i adaptacja w przypadku błędów",
+    "d": "Przetwarzanie języka naturalnego (NLP)",
+    "correct": "c"
+  },
+  {
+    "question": "Ile punktów w pytaniu diagnostycznym 'Jak często to robisz?' otrzyma zadanie wykonywane codziennie?",
+    "a": "1 punkt",
+    "b": "2 punkty",
+    "c": "3 punkty",
+    "d": "4 punkty",
+    "correct": "d"
+  },
+  {
+    "question": "W pytaniu o 'Osąd w trakcie procesu', które zadanie otrzyma najwięcej punktów (4)?",
+    "a": "Zadanie wymagające empatii i ludzkiego osądu strategicznego",
+    "b": "Zadanie częściowo kreatywne z licznymi decyzjami pośrednimi",
+    "c": "Zadanie czysto mechaniczne, niewymagające osądu w trakcie trwania",
+    "d": "Zadanie, w którym człowiek musi zatwierdzić każdy krok ze względów prawnych",
+    "correct": "c"
+  },
+  {
+    "question": "Jaki zakres punktowy w diagnostyce sugeruje, że zadanie jest materiałem na poziom 'Automatyzacja workflow'?",
+    "a": "5-8 punktów",
+    "b": "9-12 punktów",
+    "c": "13-16 punktów",
+    "d": "Powyżej 17 punktów",
+    "correct": "c"
+  },
+  {
+    "question": "Zadanie otrzymało 12 punktów w teście diagnostycznym. Jaka jest rekomendacja matrycy?",
+    "a": "Zwykły prompt wystarczy",
+    "b": "Skonfigurowanie asystenta AI (np. Gema)",
+    "c": "Budowa scenariusza w Make.com",
+    "d": "Wdrożenie autonomicznego agenta typu Cursor",
+    "correct": "b"
+  },
+  {
+    "question": "Dlaczego przy 20 punktach w teście diagnostycznym wciąż warto rozważyć Poziom 3 zamiast 4?",
+    "a": "Bo Poziom 4 jest zawsze darmowy, co sugeruje jego niską jakość",
+    "b": "Bo agenci są łatwiejsi w utrzymaniu przez działy IT",
+    "c": "Zgodnie z zasadą minimalnej złożoności – poziom 3 może być stabilniejszy i tańszy",
+    "d": "Bo Matryca Decyzyjna celowo zawyża punktację dla agentów",
+    "correct": "c"
+  },
+  {
+    "question": "Co jest 'czerwoną flagą' przy ocenie ofert od zewnętrznych dostawców AI?",
+    "a": "Propozycja wdrożenia prostego asystenta za niewielką opłatą",
+    "b": "Oferowanie drogiego agenta (Poziom 4) dla problemu ocenionego na 12 punktów",
+    "c": "Skupienie się na bezpieczeństwie danych i standardzie C2PA",
+    "d": "Sugestia, aby zacząć od 'szybkich zwycięstw' (Quick Wins)",
+    "correct": "b"
+  },
+  {
+    "question": "Jaką rolę pełni LLM w przykładzie automatyzacji magazynowej (Slack -> Google Sheets)?",
+    "a": "Wykonuje obliczenia matematyczne w arkuszu",
+    "b": "Pełni rolę routera – interpretuje intencję i wybiera odpowiednie narzędzie",
+    "c": "Samodzielnie zamawia brakujący towar u dostawców",
+    "d": "Generuje grafiki produktów do raportów",
+    "correct": "b"
+  },
+  {
+    "question": "Czym według webinaru różni się klasyczne Machine Learning (ML) od generatywnej AI?",
+    "a": "Klasyczne ML służy tylko do generowania obrazów",
+    "b": "Klasyczne ML wspiera proces podejmowania decyzji (predykcje, optymalizacje)",
+    "c": "Generatywna AI nie może być używana w biznesie",
+    "d": "Nie ma między nimi żadnej różnicy merytorycznej",
+    "correct": "b"
+  },
+  {
+    "question": "Która z metod klasycznego ML odpowiada na pytanie 'Co jeśli?'?",
+    "a": "Predykcja",
+    "b": "Optymalizacja",
+    "c": "Symulacja",
+    "d": "Klasyfikacja",
+    "correct": "c"
+  },
+  {
+    "question": "Czym jest 'Digital Twin' (Cyfrowy bliźniak)?",
+    "a": "Drugim kontem w Gemini dla członka rodziny",
+    "b": "Cyfrowym reprezentantem fizycznego obiektu lub systemu do testowania hipotez",
+    "c": "Awatar AI używany w wideokonferencjach",
+    "d": "Klonem bazy danych w formacie JSON",
+    "correct": "b"
+  },
+  {
+    "question": "Model predykcyjny w biznesie próbuje odpowiedzieć na pytanie:",
+    "a": "Jak powinno być najlepiej?",
+    "b": "Co będzie w przyszłości na podstawie danych historycznych?",
+    "c": "Dlaczego dany proces uległ awarii?",
+    "d": "Ile promptów należy wysłać do modelu?",
+    "correct": "b"
+  },
+  {
+    "question": "Który element modelu optymalizacyjnego określa to, czym możemy sterować?",
+    "a": "Funkcja celu",
+    "b": "Zmienne decyzyjne",
+    "c": "Ograniczenia prawne",
+    "d": "Parametry stałe",
+    "correct": "b"
+  },
+  {
+    "question": "Przykładem decyzji na poziomie STRATEGICZNYM (wg Daniela Kaczyńskiego) jest:",
+    "a": "Wyznaczenie trasy przejazdu kuriera w czasie rzeczywistym",
+    "b": "Wybór lokalizacji centralnego magazynu firmy",
+    "c": "Sezonowa zmiana ułożenia towarów na półkach",
+    "d": "Ustalenie ceny przejazdu w aplikacji typu Uber",
+    "correct": "b"
+  },
+  {
+    "question": "Decyzje TAKTYCZNE charakteryzują się:",
+    "a": "Podejmowaniem ich raz na kilka lat o ogromnym znaczeniu",
+    "b": "Dużą częstotliwością (często w czasie rzeczywistym) i operacyjnym charakterem",
+    "c": "Wyłącznym wpływem na strukturę prawną spółki",
+    "d": "Brakiem konieczności użycia jakichkolwiek narzędzi cyfrowych",
+    "correct": "b"
+  },
+  {
+    "question": "Co jest główną barierą wdrożeń AI według Barbary Sobkowiak?",
+    "a": "Brak mocy obliczeniowej w chmurze",
+    "b": "Opór po stronie ludzkiej i mindset organizacji",
+    "c": "Zbyt niskie ceny tokenów uniemożliwiające ROI",
+    "d": "Brak dostępu do modelu Gemini Pro w Polsce",
+    "correct": "b"
+  },
+  {
+    "question": "Na czym polega strategia 'Fast Fail' (szybkiego upadania) w projektach AI?",
+    "a": "Na rezygnacji z projektów AI przy pierwszym napotkanym błędzie",
+    "b": "Na szybkim testowaniu hipotez w małej skali, by tanio wyeliminować niedziałające pomysły",
+    "c": "Na celowym psuciu modeli w celu sprawdzenia ich odporności",
+    "d": "Na ogłaszaniu upadłości firmy po nieudanym wdrożeniu agenta",
+    "correct": "b"
+  },
+  {
+    "question": "Czym jest 'Nagroda Pingwina' wspomniana przez Basię Sobkowiak?",
+    "a": "Nagrodą za najwolniejsze wdrożenie AI w roku",
+    "b": "Wyróżnieniem dla osób, które jako pierwsze odważnie testują nowe, ryzykowne rozwiązania",
+    "c": "Karą za błędy popełnione w promptowaniu",
+    "d": "Bonusem finansowym za oszczędność energii w serwerowniach",
+    "correct": "b"
+  },
+  {
+    "question": "Dlaczego małe firmy mogą mieć przewagę we wdrażaniu AI nad dużymi korporacjami?",
+    "a": "Mają nieograniczone budżety na R&D",
+    "b": "Są bardziej zwinne i mają mniej skomplikowane procedury akceptacyjne",
+    "c": "Posiadają więcej danych historycznych do trenowania modeli",
+    "d": "Nie muszą przestrzegać regulacji prawnych dotyczących AI",
+    "correct": "b"
+  },
+  {
+    "question": "Co Barbara Sobkowiak radzi jako 'pierwszy mały krok' dla firmy?",
+    "a": "Zatrudnienie 10 inżynierów AI",
+    "b": "Znalezienie konkretnego miejsca, 'gdzie nas boli' (bolączki procesowej)",
+    "c": "Zakup licencji Enterprise dla wszystkich pracowników bez szkolenia",
+    "d": "Budowa własnego modelu językowego od zera",
+    "correct": "b"
+  },
+  {
+    "question": "W kontekście optymalizacji, 'minimalizacja łącznej drogi kompletacji' to przykład:",
+    "a": "Zmiennej decyzyjnej",
+    "b": "Ograniczenia",
+    "c": "Funkcji celu",
+    "d": "Parametru",
+    "correct": "c"
+  },
+  {
+    "question": "Jaka jest rola człowieka w systemach agentowych (np. Cursor) według Kamila Stanucha?",
+    "a": "Człowiek jest całkowicie zbędny po uruchomieniu agenta",
+    "b": "Człowiek pozostaje w pętli decyzyjnej (Human in the Loop), akceptując lub odrzucając zmiany",
+    "c": "Człowiek zajmuje się tylko opłacaniem faktur za API",
+    "d": "Człowiek musi przepisywać kod generowany przez agenta ręcznie do notatnika",
+    "correct": "b"
+  },
+  {
+    "question": "Który poziom Matrycy Decyzyjnej najlepiej pasuje do zadania 'Odpowiedzi na powtarzające się pytania FAQ zespołu'?",
+    "a": "Poziom 1: Prompt",
+    "b": "Poziom 2: Assistant (np. skonfigurowany Gem z bazą wiedzy)",
+    "c": "Poziom 3: Automatyzacja (Make.com łączący 5 baz danych)",
+    "d": "Poziom 4: Autonomiczny agent planujący budżet",
+    "correct": "b"
+  },
+  {
+    "question": "Co oznacza termin 'ROI' w kontekście wdrożeń AI?",
+    "a": "Return on Information (zwrot z informacji)",
+    "b": "Return on Investment (zwrot z inwestycji czasu i zasobów)",
+    "c": "Risk of Innovation (ryzyko innowacji)",
+    "d": "Rate of Intelligence (wskaźnik inteligencji modelu)",
+    "correct": "b"
+  },
+  {
+    "question": "Jaką radę dotyczącą licencji Gemini Pro podano na koniec webinaru?",
+    "a": "Należy kupować tylko licencje indywidualne",
+    "b": "Dodanie członka rodziny do konta może rozszerzyć zakres licencji (w planach rodzinnych)",
+    "c": "Licencje Pro są darmowe dla każdego studenta SGH",
+    "d": "Nie należy korzystać z wersji Pro do zadań biznesowych",
+    "correct": "b"
+  },
+  {
+    "question": "Który etap wdrożenia AI powinien nastąpić po zmierzeniu i udokumentowaniu efektów pierwszego 'Quick Win'?",
+    "a": "Natychmiastowa rezygnacja z dalszych prac",
+    "b": "Budowa strategii AI w oparciu o zebrane argumenty i wyniki",
+    "c": "Zwolnienie zespołu odpowiedzialnego za manualny proces",
+    "d": "Ukrycie wyników przed zarządem w celu uniknięcia kontroli",
+    "correct": "b"
+  },
+  {
+    "question": "Modelowanie kotła ogrzewającego miasto to w webinarze przykład:",
+    "a": "Prostej automatyzacji typu prompt",
+    "b": "Zastosowania cyfrowego bliźniaka (Digital Twin) do symulacji",
+    "c": "Wykorzystania generatywnej AI do pisania wierszy o cieple",
+    "d": "Optymalizacji tras dostaw węgla",
+    "correct": "b"
+  },
+  {
+    "question": "Co to jest 'syndrom pustej kartki' w kontekście mapowania zadań?",
+    "a": "Brak papieru w drukarce biurowej",
+    "b": "Trudność z rozpoczęciem wypisywania zadań bez zewnętrznego bodźca lub pomocy AI",
+    "c": "Stan po usunięciu wszystkich danych z modelu AI",
+    "d": "Ostatni etap egzaminu certyfikacyjnego",
+    "correct": "b"
+  },
+  {
+    "question": "Jakie jest najważniejsze przesłanie dotyczące błędów AI w procesach biznesowych?",
+    "a": "AI nigdy nie popełnia błędów, jeśli prompt jest dobry",
+    "b": "Im błąd jest bardziej kosztowny, tym większy nadzór człowieka jest wymagany",
+    "c": "Błędy AI należy ignorować, bo statystycznie jest ich mało",
+    "d": "Za błędy AI zawsze odpowiada dostawca modelu",
+    "correct": "b"
+  },
+  {
+    "question": "Dlaczego w kontekście systemów AI branża technologiczna promuje termin 'agenty' zamiast 'agenci'?",
+    "a": "Ponieważ forma 'agenci' jest błędna językowo w odniesieniu do informatyki.",
+    "b": "Aby poprzez rodzaj nijaki podkreślić, że mowa o zautomatyzowanym systemie, a nie o osobie.",
+    "c": "Jest to wymóg licencyjny narzucony przez twórców modeli LLM.",
+    "d": "Termin 'agenty' odnosi się wyłącznie do modeli działających lokalnie (on-premise).",
+    "correct": "b"
+  },
+  {
+    "question": "W lotniczej analogii użytej w materiałach, system typu workflow (autopilot) różni się od agenta AI tym, że:",
+    "a": "Autopilot działa w pętli elastycznej, a agent wykonuje sztywne instrukcje.",
+    "b": "Agent dąży do celu jako 'kapitan', samodzielnie planując kroki i adaptując się do zmian.",
+    "c": "Workflow wymaga dostępu do internetu, natomiast agent AI pracuje wyłącznie na danych lokalnych.",
+    "d": "Autopilot zarządza wieloma modelami językowymi, a agent tylko jednym.",
+    "correct": "b"
+  },
+  {
+    "question": "Który z wymienionych algorytmów odpowiada za łączenie generowania planu z działaniem, sprowadzając autonomię agenta do inżynierii?",
+    "a": "Transformer 2.0",
+    "b": "A2A Protocol",
+    "c": "ReACT",
+    "d": "MCP (Model Context Protocol)",
+    "correct": "c"
+  },
+  {
+    "question": "Standardowa pętla agentowa składa się z czterech etapów. Jaka jest ich poprawna kolejność?",
+    "a": "Analiza, Kodowanie, Obserwacja, Raportowanie.",
+    "b": "Promptowanie, Generowanie, Korekta, Publikacja.",
+    "c": "Planowanie i refleksja, Działanie, Obserwacja, Powtórzenie.",
+    "d": "Wyszukiwanie, Mapowanie, Agregacja, Wysyłka.",
+    "correct": "c"
+  },
+  {
+    "question": "Zgodnie z 'równaniem asystenta AI', jakie elementy składają się na jego konstrukcję?",
+    "a": "LLM + Interfejs + API + Baza danych SQL.",
+    "b": "Model językowy + Rola + Baza wiedzy + Narzędzia.",
+    "c": "Agent + Kapitan + Autopilot + Dane RAW.",
+    "d": "Gemini + Workspace + Google Drive + Slack.",
+    "correct": "b"
+  },
+  {
+    "question": "Zasada 'Garbage In, Garbage Out' (GIGO) w pracy z asystentami AI oznacza, że:",
+    "a": "Stare dane z bazy wiedzy są automatycznie usuwane przez model.",
+    "b": "Jakość odpowiedzi asystenta jest bezpośrednią funkcją jakości poleceń użytkownika.",
+    "c": "Modele AI potrafią odfiltrować błędne informacje z dokumentów firmowych.",
+    "d": "Asystent ignoruje prompty zawierające błędy ortograficzne.",
+    "correct": "b"
+  },
+  {
+    "question": "Jakie jest główne ryzyko związane z udostępnieniem asystentowi AI wrażliwych danych firmowych bez odpowiednich zabezpieczeń?",
+    "a": "Automatyczne upublicznienie danych w wyszukiwarce Google.",
+    "b": "Podatność na atak typu 'prompt injection', mogący wymusić kradzież danych.",
+    "c": "Trwała utrata plików z chmury wskutek halucynacji modelu.",
+    "d": "Zablokowanie konta Gemini Enterprise przez administratora.",
+    "correct": "b"
+  },
+  {
+    "question": "W architekturze systemów wieloagentowych, czym charakteryzuje się wzorzec MCP (Model Context Protocol)?",
+    "a": "Definiuje, jak różne agenty mają ze sobą rozmawiać w zespole.",
+    "b": "Określa precyzyjnie, jak agent otrzymuje i przetwarza kontekst swojej pracy.",
+    "c": "Służy wyłącznie do generowania kodu w języku Python przez Antigravity.",
+    "d": "Jest to protokół szyfrowania kluczy API w narzędziu Make.com.",
+    "correct": "b"
+  },
+  {
+    "question": "Na czym polega atak typu 'Denial of Wallet' w kontekście agentów AI?",
+    "a": "Na kradzieży fizycznego portfela użytkownika poprzez phishing.",
+    "b": "Na wprowadzeniu agenta w nieskończoną lub bardzo kosztowną pętlę zadań.",
+    "c": "Na zablokowaniu dostępu do darmowych kredytów w modelu Flash.",
+    "d": "Na podmianie numeru konta bankowego w generowanych ofertach.",
+    "correct": "b"
+  },
+  {
+    "question": "Jaki jest zalecany mechanizm kontroli nad agentem AI przy podejmowaniu krytycznych decyzji biznesowych?",
+    "a": "Całkowita autonomia agenta w celu zwiększenia ROI.",
+    "b": "Zastosowanie wyłącznie modelu Gemini 1.5 Pro.",
+    "c": "Human in the loop (człowiek w pętli) – zatwierdzanie decyzji.",
+    "d": "Ograniczenie bazy wiedzy do plików PDF.",
+    "correct": "c"
+  },
+  {
+    "question": "W narzędziu Make.com 'trigger' (wyzwalacz) to:",
+    "a": "Ostatni moduł w scenariuszu wysyłający maila.",
+    "b": "Zdarzenie, które uruchamia całą automatyzację.",
+    "c": "Specjalny znacznik HTML do formatowania tekstu.",
+    "d": "Przycisk służący do ręcznego usuwania błędów.",
+    "correct": "b"
+  },
+  {
+    "question": "Jaki jest minimalny interwał sprawdzania danych (próbkowania) w darmowym planie Make.com dla większości aplikacji?",
+    "a": "1 minuta",
+    "b": "5 minut",
+    "c": "15 minut",
+    "d": "60 minut",
+    "correct": "c"
+  },
+  {
+    "question": "Dlaczego podczas nauki automatyzacji w Make.com zaleca się używanie akcji 'Create a draft' zamiast 'Send an email'?",
+    "a": "Akcja 'Create a draft' nie zużywa kredytów w planie darmowym.",
+    "b": "Pozwala to na ludzką weryfikację treści i uniknięcie błędów przed wysyłką.",
+    "c": "Wersje robocze są lepiej interpretowane przez modele LLM.",
+    "d": "Gmail blokuje automatyczną wysyłkę e-maili z narzędzi typu no-code.",
+    "correct": "b"
+  },
+  {
+    "question": "Do czego służy moduł 'Text aggregator' w scenariuszach Make.com?",
+    "a": "Do automatycznego tłumaczenia tekstu na 100 języków.",
+    "b": "Do łączenia wielu rekordów danych w jeden spójny blok tekstu.",
+    "c": "Do wykrywania i usuwania kluczy API z logów.",
+    "d": "Do zamiany formatu HTML na Markdown.",
+    "correct": "b"
+  },
+  {
+    "question": "Który model z rodziny Gemini, ogłoszony na konferencji IO, charakteryzuje się 4-krotnie wyższą szybkością generowania tokenów?",
+    "a": "Gemini 1.5 Pro",
+    "b": "Gemini 1.5 Nano",
+    "c": "Gemini 1.5 Flash",
+    "d": "Gemini 1.0 Ultra",
+    "correct": "c"
+  },
+  {
+    "question": "Model Gemini 1.5 Omni wyróżnia się ulepszonym rozumieniem fizyki. Jakie konkretnie siły/zjawiska wymieniono?",
+    "a": "Elektromagnetyzm i termodynamika.",
+    "b": "Grawitacja, energia kinetyczna i dynamika płynów.",
+    "c": "Tarcie powierzchniowe i opór powietrza.",
+    "d": "Rozszczepienie atomu i kwantowanie energii.",
+    "correct": "b"
+  },
+  {
+    "question": "W systemie Wiki (według Karpatiego i Tkaczyka), folder 'RAW' służy do:",
+    "a": "Przechowywania plików, które AI może dowolnie modyfikować i usuwać.",
+    "b": "Przechowywania niezmiennych źródeł prawdy (artykuły, notatki, brand voice).",
+    "c": "Zapisywania błędnych odpowiedzi wygenerowanych przez model.",
+    "d": "Przechowywania wyłącznie obrazów i plików wideo.",
+    "correct": "b"
+  },
+  {
+    "question": "Jaką funkcję pełni plik 'index.md' w architekturze Wiki AI?",
+    "a": "Jest to plik wykonywalny uruchamiający agenta Antigravity.",
+    "b": "Zawiera spis treści (mapę wiedzy) z podsumowaniem każdego pliku.",
+    "c": "Przechowuje zaszyfrowane hasła i klucze API użytkownika.",
+    "d": "Służy do automatycznego backupu danych na serwer n8n.",
+    "correct": "b"
+  },
+  {
+    "question": "Ile pierwszych procedur 'ingest' (wciągania danych) powinno być nadzorowanych przez człowieka wg rekomendacji?",
+    "a": "Pierwsze 10",
+    "b": "Pierwsze 50",
+    "c": "Pierwsze 100",
+    "d": "Wszystkie przez pierwszy rok pracy.",
+    "correct": "c"
+  },
+  {
+    "question": "Czym są 'Skille' (.md) w systemie Pawła Tkaczyka?",
+    "a": "Certyfikatami, które użytkownik musi wgrać do bazy AI.",
+    "b": "Plikami ładowanymi dynamicznie do kontekstu przy konkretnych słowach-kluczach.",
+    "c": "Listą błędów popełnionych przez model podczas pętli agentowej.",
+    "d": "Darmowymi wtyczkami do przeglądarki Chrome.",
+    "correct": "b"
+  },
+  {
+    "question": "Zasada 'najmniejszych przywilejów' w bezpieczeństwie IT polega na:",
+    "a": "Udzielaniu dostępu do AI tylko pracownikom z najkrótszym stażem.",
+    "b": "Przyznawaniu procesom tylko tych uprawnień, które są niezbędne do pracy.",
+    "c": "Korzystaniu wyłącznie z darmowych narzędzi typu open-source.",
+    "d": "Ograniczeniu liczby promptów do 10 dziennie dla każdego agenta.",
+    "correct": "b"
+  },
+  {
+    "question": "Co to jest 'Defense in depth'?",
+    "a": "Metoda głębokiego researchu prowadzona przez agenta naukowca.",
+    "b": "Wielowarstwowe podejście do bezpieczeństwa (zabezpieczenia na różnych poziomach).",
+    "c": "Technika ukrywania plików przed modelem Gemini.",
+    "d": "Specjalny tryb pracy Antigravity w wersji 2.0.",
+    "correct": "b"
+  },
+  {
+    "question": "Do czego służy narzędzie 'LittleSnitch' lub 'Lulu' wspomniane w kontekście bezpieczeństwa?",
+    "a": "Do automatycznego generowania spisu treści w Wiki.",
+    "b": "Do monitorowania i blokowania niechcianych połączeń wychodzących.",
+    "c": "Do wykrywania plagiatu w tekstach generowanych przez AI.",
+    "d": "Do zarządzania projektami w Make.com.",
+    "correct": "b"
+  },
+  {
+    "question": "W procedurze Wiki, co dzieje się podczas kroku 'sprzątaj' (clean)?",
+    "a": "Model usuwa wszystkie pliki z folderu RAW.",
+    "b": "Model wyłapuje sprzeczności i usuwa nieaktualne informacje.",
+    "c": "Agent restartuje połączenie z API Google Cloud.",
+    "d": "System formatuje dysk twardy w celu ochrony prywatności.",
+    "correct": "b"
+  },
+  {
+    "question": "Dlaczego podawanie kluczy API jako 'plain text' w modułach Make czy n8n jest krytycznym błędem?",
+    "a": "Klucze te przestają działać po 24 godzinach.",
+    "b": "Są widoczne w logach i komunikatach błędów, co ułatwia ich kradzież.",
+    "c": "Model Gemini nie potrafi odczytać kluczy w formacie tekstowym.",
+    "d": "Powoduje to 10-krotne zwiększenie zużycia tokenów.",
+    "correct": "b"
+  },
+  {
+    "question": "Na konferencji IO ogłoszono, że model Gemini 1.5 Flash jest pod względem szybkości:",
+    "a": "Dwa razy wolniejszy od wersji Pro, ale tańszy.",
+    "b": "Identyczny pod względem prędkości co wersja 1.0.",
+    "c": "Cztery razy szybszy od innych modeli tej klasy.",
+    "d": "Dostępny tylko dla użytkowników w USA.",
+    "correct": "c"
+  },
+  {
+    "question": "W kontekście brand voice, co to jest 'Antimacaronism list'?",
+    "a": "Lista produktów spożywczych zakazanych w tekstach marketingowych.",
+    "b": "Spis niepożądanych anglicyzmów i zapożyczeń, których model ma unikać.",
+    "c": "Zbiór błędów gramatycznych typowych dla modeli LLM.",
+    "d": "Lista słów kluczowych zwiększających pozycjonowanie w Google.",
+    "correct": "b"
+  },
+  {
+    "question": "Czym jest 'pinning wersji' w zarządzaniu środowiskiem programisty AI?",
+    "a": "Przypinaniem najważniejszych promptów do góry czatu.",
+    "b": "Wymuszaniem stosowania konkretnej, sprawdzonej wersji biblioteki.",
+    "c": "Zablokowaniem możliwości aktualizacji systemu Windows.",
+    "d": "Oznaczaniem plików RAW jako 'tylko do odczytu'.",
+    "correct": "b"
+  },
+  {
+    "question": "Jaka jest główna zaleta korzystania z kluczy API 'per projekt' zamiast jednego globalnego?",
+    "a": "Niższa cena za każdy zużyty token.",
+    "b": "Możliwość nałożenia specyficznych limitów i łatwiejsze odcięcie dostępu w razie wycieku.",
+    "c": "Szybsze generowanie odpowiedzi przez model Flash.",
+    "d": "Brak konieczności podpinania karty płatniczej.",
+    "correct": "b"
+  },
+  {
+    "question": "W systemie wieloagentowym, jaką rolę pełni agent 'Krytyk'?",
+    "a": "Wyszukuje najtańsze subskrypcje modeli AI na rynku.",
+    "b": "Sprawdza i poprawia treści wygenerowane przez inne agenty.",
+    "c": "Blokuje dostęp użytkownika do systemu w przypadku wykrycia spamu.",
+    "d": "Zajmuje się wyłącznie obsługą błędów API w Make.com.",
+    "correct": "b"
+  },
+  {
+    "question": "W scenariuszu Make.com integrującym Gmaila, dlaczego warto użyć modułu 'Markdown to HTML'?",
+    "a": "Aby Gmail poprawnie wyświetlał formatowanie (pogrubienia, listy).",
+    "b": "Ponieważ HTML zajmuje mniej miejsca w chmurze niż Markdown.",
+    "c": "Aby zabezpieczyć maila przed atakiem typu prompt injection.",
+    "d": "Wymaga tego polityka RODO dotycząca korespondencji masowej.",
+    "correct": "a"
+  },
+  {
+    "question": "Ile kredytów miesięcznie oferuje darmowy plan narzędzia Make.com?",
+    "a": "100",
+    "b": "500",
+    "c": "1000",
+    "d": "Bez limitu, ale z interwałem 60 minut.",
+    "correct": "c"
+  },
+  {
+    "question": "Czym charakteryzuje się Antigravity 2.0 pokazane na konferencji IO?",
+    "a": "Jest to wyłącznie wtyczka do Google Sheets.",
+    "b": "Jest to desktopowa aplikacja agentowa pracująca na plikach i folderach.",
+    "c": "Służy do automatycznego usuwania tła z filmów wideo.",
+    "d": "Wymaga znajomości języka C++ do uruchomienia pętli.",
+    "correct": "b"
+  },
+  {
+    "question": "W systemie Wiki Pawła Tkaczyka, plik 'agents.md' pełni rolę:",
+    "a": "Archiwum starych promptów.",
+    "b": "Regulaminu wskazującego agentowi, jak ma się zachowywać w folderze.",
+    "c": "Bazy danych z adresami mailowymi klientów.",
+    "d": "Listy płatności za API Gemini.",
+    "correct": "b"
+  },
+  {
+    "question": "Technika 'grounding' stosowana w asystentach AI służy do:",
+    "a": "Zwiększenia kreatywności modelu przy pisaniu wierszy.",
+    "b": "Osadzenia odpowiedzi w konkretnych, dostarczonych źródłach wiedzy.",
+    "c": "Zablokowania dostępu modelu do internetu.",
+    "d": "Tłumaczenia promptów z języka polskiego na angielski.",
+    "correct": "b"
+  },
+  {
+    "question": "Jak nazywa się atak, w którym sprytne zapytanie wprowadza agenta w kosztowną pętlę?",
+    "a": "SQL Injection",
+    "b": "Denial of Wallet",
+    "c": "Brute Force",
+    "d": "Man-in-the-middle",
+    "correct": "b"
+  },
+  {
+    "question": "W kontekście bezpieczeństwa, co oznacza zasada 'Defense in Depth'?",
+    "a": "Stosowanie tylko najgłębszych sieci neuronowych.",
+    "b": "Wielowarstwowa ochrona: od limitów API po weryfikację użytkownika.",
+    "c": "Przechowywanie serwerów głęboko pod ziemią.",
+    "d": "Ukrywanie promptów systemowych przed pracownikami.",
+    "correct": "b"
+  },
+  {
+    "question": "W narzędziu n8n, dlaczego wersja 'self-hosted' może być bezpieczniejsza?",
+    "a": "Ponieważ jest całkowicie darmowa dla każdego.",
+    "b": "Ponieważ dane i klucze API nie opuszczają własnej infrastruktury.",
+    "c": "Ponieważ automatycznie naprawia błędy w kodzie Python.",
+    "d": "Wymaga ona logowania dwuskładnikowego Google.",
+    "correct": "b"
+  },
+  {
+    "question": "Co jest 'mózgiem' asystenta AI w równaniu przedstawionym w lekcjach?",
+    "a": "Baza wiedzy (dokumenty).",
+    "b": "Duży model językowy (LLM).",
+    "c": "Interfejs użytkownika.",
+    "d": "Klucz API Gemini.",
+    "correct": "b"
+  },
+  {
+    "question": "W systemie Wiki, co model 'wciąga' (ingest) z folderu RAW?",
+    "a": "Tylko pliki graficzne i logo firmy.",
+    "b": "Interpretacje wiedzy, style i połączenia (encje).",
+    "c": "Hasła do mediów społecznościowych użytkownika.",
+    "d": "Nowe aktualizacje systemu operacyjnego.",
+    "correct": "b"
+  },
+  {
+    "question": "Dlaczego podczas automatyzacji wysyłki ofert zaleca się, aby przycisk 'wyślij' naciskał człowiek?",
+    "a": "Bo AI nie potrafi technicznie wysłać maila przez SMTP.",
+    "b": "W celu eliminacji ryzyka wysłania błędnej lub odhalucynowanej oferty.",
+    "c": "Aby zaoszczędzić na liczbie zużytych tokenów.",
+    "d": "Jest to wymóg prawny RODO dla każdej firmy w Polsce.",
+    "correct": "b"
+  },
+  {
+    "question": "Jaką funkcję w Make.com pełni 'mapowanie'?",
+    "a": "Rysowanie drogi dojazdu do klienta.",
+    "b": "Łączenie dynamicznych danych z jednego modułu z polami w innym.",
+    "c": "Ustawianie strefy czasowej dla scenariusza.",
+    "d": "Sprawdzanie, czy serwery Make są online.",
+    "correct": "b"
+  },
+  {
+    "question": "Model Gemini 1.5 Pro będzie sukcesywnie udostępniany szerzej od:",
+    "a": "Wczoraj",
+    "b": "Przyszłego miesiąca",
+    "c": "8 czerwca",
+    "d": "Końca roku 2026",
+    "correct": "b"
+  },
+  {
+    "question": "Co według Pawła Tkaczyka jest 'najwyższą szkołą jazdy' w tworzeniu asystentów dla klientów?",
+    "a": "Stworzenie jednego, globalnego dżemu dla wszystkich.",
+    "b": "Tworzenie dedykowanych folderów Wiki z osobnymi regułami i skillami.",
+    "c": "Używanie wyłącznie darmowej wersji Gemini.",
+    "d": "Ręczne kopiowanie każdego maila do ChatGPT.",
+    "correct": "b"
+  },
+  {
+    "question": "Czym jest 'cooldown period' w kontekście instalacji bibliotek przez programistę AI?",
+    "a": "Czasem potrzebnym na schłodzenie procesora po generowaniu obrazu.",
+    "b": "Okresem odczekania przed instalacją nowej wersji paczki (ochrona przed złośliwym kodem).",
+    "c": "Przerwą w pracy narzuconą przez limity API.",
+    "d": "Czasem ładowania modelu Gemini do pamięci RAM.",
+    "correct": "b"
+  },
+  {
+    "question": "W systemie Wiki, jeśli w dwóch różnych plikach są sprzeczne informacje o zniżce dla klienta, co zrobi procedura 'sprzątaj'?",
+    "a": "Zsumuje obie zniżki w jedną.",
+    "b": "Wyłapie sprzeczność i usunie nieprawidłową informację.",
+    "c": "Zablokuje możliwość zadawania pytań o zniżki.",
+    "d": "Wyśle zapytanie do klienta z prośbą o wyjaśnienie.",
+    "correct": "b"
+  },
+  {
+    "question": "Które z wymienionych narzędzi służy do wizualnego przeglądania grafu połączeń między plikami Markdown?",
+    "a": "Make.com",
+    "b": "Obsidian",
+    "c": "Gmail",
+    "d": "Antigravity 1.0 CLI",
+    "correct": "b"
+  },
+  {
+    "question": "Co oznacza skrót MD w nazwach plików takich jak 'index.md'?",
+    "a": "Model Data",
+    "b": "Markdown",
+    "c": "Managed Document",
+    "d": "Master Directory",
+    "correct": "b"
+  },
+  {
+    "question": "Zgodnie z materiałami, co jest 'najcenniejszym zasobem', który odzyskujemy dzięki automatyzacji?",
+    "a": "Pieniądze",
+    "b": "Czas",
+    "c": "Dane",
+    "d": "Kreatywność",
+    "correct": "b"
+  },
+  {
+    "question": "W kontekście modelu Gemini Omni, co oznacza, że model rozumie 'energię kinetyczną'?",
+    "a": "Potrafi obliczyć rachunek za prąd za generowanie wideo.",
+    "b": "Generuje filmy, w których ruch obiektów jest zgodny z prawami fizyki.",
+    "c": "Zmusza użytkownika do szybszego pisania promptów.",
+    "d": "Automatycznie przyspiesza tempo czytania dokumentów PDF.",
+    "correct": "b"
+  },
+  {
+    "question": "Według Pawła Tkaczyka proces pisania można podzielić na trzy etapy. Na którym z nich edytor tekstu (np. Word) staje się odpowiednim narzędziem?",
+    "a": "Pierwszym (koncepcyjnym)",
+    "b": "Drugim (pisanie właściwe)",
+    "c": "Trzecim (redakcja i formatowanie)",
+    "d": "Żadnym, ponieważ Word ogranicza strumień myśli",
+    "correct": "c"
+  },
+  {
+    "question": "W technice SCAMPER, litera 'E' odnosi się do pytania 'Co można...?'",
+    "a": "Ewoluować (Evolve)",
+    "b": "Eksploatować (Exploit)",
+    "c": "Usunąć (Eliminate)",
+    "d": "Ekstrapolować (Extrapolate)",
+    "correct": "c"
+  },
+  {
+    "question": "Kto opracował technikę 'Kwiat Lotosu' w latach 70. XX wieku?",
+    "a": "Sakichi Toyoda",
+    "b": "Yasuo Matsumura",
+    "c": "Ray Oldenburg",
+    "d": "Margaret Mark",
+    "correct": "b"
+  },
+  {
+    "question": "Model promptowania DELTA jest akronimem. Co oznacza w nim litera 'L'?",
+    "a": "Layout (Układ)",
+    "b": "Logic (Logika)",
+    "c": "Limitations (Ograniczenia)",
+    "d": "Language (Język)",
+    "correct": "c"
+  },
+  {
+    "question": "W metodzie persony opartej na technice '5 razy dlaczego', głównym celem jest dotarcie do:",
+    "a": "Demografii klienta",
+    "b": "Miejsca zamieszkania",
+    "c": "Głębokiej, prawdziwej motywacji",
+    "d": "Preferencji zakupowych na Facebooku",
+    "correct": "c"
+  },
+  {
+    "question": "Który element modelu AIDA ma na celu sprawić, by odbiorca 'uwierzył w to, co czyta'?",
+    "a": "Attention (Uwaga)",
+    "b": "Interest (Zainteresowanie)",
+    "c": "Desire (Pożądanie)",
+    "d": "Action (Akcja)",
+    "correct": "c"
+  },
+  {
+    "question": "W frameworku SPICE, służącym do tworzenia stron internetowych, litera 'P' oznacza:",
+    "a": "Product description (Opis produktu)",
+    "b": "Prompt variables (Zmienne promptu)",
+    "c": "Pricing (Cennik)",
+    "d": "Persona (Odbiorca)",
+    "correct": "b"
+  },
+  {
+    "question": "Na czym polega etap 'Agitate' w modelu copywriterskim PAS?",
+    "a": "Na przedstawieniu prostego rozwiązania",
+    "b": "Na identyfikacji bólu klienta",
+    "c": "Na wyolbrzymieniu konsekwencji i skali problemu",
+    "d": "Na podaniu mierzalnej jednostki czasu zmiany",
+    "correct": "c"
+  },
+  {
+    "question": "W modelu FAB (Features, Advantages, Benefits), 'przewaga' odpowiada na pytanie:",
+    "a": "Co to jest?",
+    "b": "Co to robi?",
+    "c": "Co ja będę z tego miał?",
+    "d": "Ile to kosztuje?",
+    "correct": "b"
+  },
+  {
+    "question": "Technika tworzenia nagłówków 'OD, DO, W' składa się z trzech elementów. Co oznacza litera 'W'?",
+    "a": "Wartość produktu",
+    "b": "Wizję przyszłości",
+    "c": "Mierzalną jednostkę czasu",
+    "d": "Wskaźnik sukcesu",
+    "correct": "c"
+  },
+  {
+    "question": "Który archetyp marki opiera swoją komunikację na słowie kluczu 'Wolność'?",
+    "a": "Niewinny",
+    "b": "Odkrywca",
+    "c": "Mędrzec",
+    "d": "Czarodziej",
+    "correct": "b"
+  },
+  {
+    "question": "Marka IKEA, oferująca meble dla każdego i budująca poczucie wspólnoty, wpisuje się w archetyp:",
+    "a": "Opiekuna",
+    "b": "Twórcy",
+    "c": "Zwykłego człowieka (Everyman)",
+    "d": "Błazna",
+    "correct": "c"
+  },
+  {
+    "question": "Według badań BBDO 'Ritual Masters', rytuał 'Przygotowanie do bitwy' dotyczy głównie:",
+    "a": "Wieczornego odprężenia i zrzucenia zbroi",
+    "b": "Budowania więzi podczas wspólnego posiłku",
+    "c": "Porannych czynności przygotowujących do wyzwań dnia",
+    "d": "Zabezpieczenia się na przyszłość przed snem",
+    "correct": "c"
+  },
+  {
+    "question": "Ray Oldenburg wyróżnił trzy przestrzenie życia. Czym jest 'Trzecie miejsce'?",
+    "a": "Domem, gdzie towarzyszy nam rodzina",
+    "b": "Pracą, gdzie towarzyszą nam współpracownicy",
+    "c": "Miejscem spotkań z przyjaciółmi (np. kawiarnia, siłownia)",
+    "d": "Wirtualną przestrzenią w mediach społecznościowych",
+    "correct": "c"
+  },
+  {
+    "question": "Co jest kluczowym elementem odróżniającym prompt wideo od promptu graficznego?",
+    "a": "Miejsce akcji",
+    "b": "Akcja (dynamiczne czasowniki)",
+    "c": "Styl i estetyka",
+    "d": "Podmiot",
+    "correct": "b"
+  },
+  {
+    "question": "W ElevenLabs, która ścieżka pracy z głosem wymaga minimum 10 minut czystych nagrań wysokiej jakości?",
+    "a": "Voice Design",
+    "b": "Instant Voice Cloning (IVC)",
+    "c": "Professional Voice Cloning (PVC)",
+    "d": "Voice Remixing",
+    "correct": "c"
+  },
+  {
+    "question": "Narzędzie Miro w wersji darmowej oferuje użytkownikowi:",
+    "a": "Nieograniczoną liczbę tablic i 100 kredytów AI",
+    "b": "Jedną tablicę roboczą i 10 kredytów AI",
+    "c": "Trzy tablice robocze i brak funkcji AI",
+    "d": "Pełny dostęp do wszystkich funkcji AI przez 30 dni",
+    "correct": "b"
+  },
+  {
+    "question": "W frameworku FRAME, używanym w narzędziu Lovable, litera 'A' oznacza:",
+    "a": "Analyze (Analizuj)",
+    "b": "Attach (Podepnij, np. bazę danych)",
+    "c": "Automate (Automatyzuj)",
+    "d": "Adjust (Dostosuj)",
+    "correct": "b"
+  },
+  {
+    "question": "Kiedy oficjalnie opublikowano polski model językowy Bielik?",
+    "a": "1 stycznia 2023 r.",
+    "b": "31 grudnia 2024 r. (zgodnie z webinaru zapowiedzią daty publikacji)",
+    "c": "1 lipca 2022 r.",
+    "d": "31 grudnia 2022 r.",
+    "correct": "b"
+  },
+  {
+    "question": "Ile parametrów posiada model Bielik, co pozwala na jego uruchomienie na stosunkowo małej infrastrukturze?",
+    "a": "7 miliardów",
+    "b": "11 miliardów",
+    "c": "30 miliardów",
+    "d": "175 miliardów",
+    "correct": "b"
+  },
+  {
+    "question": "Koncepcja 'Human in the lead' różni się od 'Human in the loop' tym, że:",
+    "a": "Człowiek tylko akceptuje wyniki na końcu pętli",
+    "b": "Człowiek jest świadomym liderem projektującym cały proces i biorącym odpowiedzialność",
+    "c": "AI samo podejmuje decyzje, a człowiek je tylko monitoruje",
+    "d": "AI zastępuje człowieka w procesie decyzyjnym",
+    "correct": "b"
+  },
+  {
+    "question": "Za wycieki danych spowodowane przez pracownika korzystającego z darmowych, nieautoryzowanych narzędzi AI, co do zasady odpowiada:",
+    "a": "Pracownik z własnego majątku",
+    "b": "Dostawca modelu AI",
+    "c": "Pracodawca",
+    "d": "Ministerstwo Cyfryzacji",
+    "correct": "c"
+  },
+  {
+    "question": "W metodzie '5W+H', pytanie 'Kiedy?' (When) odnosi się w marketingu do:",
+    "a": "Daty założenia firmy",
+    "b": "Godzin pracy biura",
+    "c": "Zewnętrznych bodźców wyzwalających potrzebę u klienta",
+    "d": "Terminu ważności produktu",
+    "correct": "c"
+  },
+  {
+    "question": "Która technika redakcyjna polega na rozpoczęciu i zakończeniu opowieści w tym samym punkcie?",
+    "a": "Retrospektywa",
+    "b": "Pętla narracyjna",
+    "c": "Onomatopeja",
+    "d": "Aliteracja",
+    "correct": "b"
+  },
+  {
+    "question": "W modelu ElevenLabs, funkcja 'Voice Remixing' służy do:",
+    "a": "Tworzenia całkowicie nowego głosu z opisu tekstowego",
+    "b": "Przetransformowania barwy istniejącego głosu (np. na starszy lub z innym akcentem)",
+    "c": "Klonowania głosu innej osoby bez jej zgody",
+    "d": "Usuwania szumów z nagrania",
+    "correct": "b"
+  },
+  {
+    "question": "Zgodnie z materiałami, 'Shadow AI' to zjawisko polegające na:",
+    "a": "Tworzeniu kopii zapasowych modeli AI",
+    "b": "Korzystaniu z AI przez pracowników bez wiedzy i zgody pracodawcy",
+    "c": "Atakowaniu systemów AI przez hakerów",
+    "d": "Ukrywaniu wyników pracy AI przed klientami",
+    "correct": "b"
+  },
+  {
+    "question": "Co oznacza termin 'Single Input Stream Device' w kontekście blokady pisarskiej?",
+    "a": "Urządzenie o wielu strumieniach wprowadzania danych",
+    "b": "Urządzenie wymagające uporządkowanego strumienia myśli (np. klawiatura)",
+    "c": "Sztuczna inteligencja generująca tekst",
+    "d": "Mózg przetwarzający równolegle wiele wątków",
+    "correct": "b"
+  },
+  {
+    "question": "Ile głównych obszarów (płatków) generuje model AI w technice Kwiatu Lotosu według podanego promptu?",
+    "a": "5",
+    "b": "8",
+    "c": "10",
+    "d": "12",
+    "correct": "b"
+  },
+  {
+    "question": "Podstawowa zasada 'GIGO' w pracy z AI odnosi się do:",
+    "a": "Szybkości generowania tokenów",
+    "b": "Zależności jakości odpowiedzi od jakości danych wejściowych",
+    "c": "Bezpieczeństwa danych osobowych",
+    "d": "Liczby parametrów modelu",
+    "correct": "b"
+  },
+  {
+    "question": "W modelu FAB, stwierdzenie 'Puzzle można złożyć w 1-2 wieczory' jest przykładem:",
+    "a": "Cechy",
+    "b": "Przewagi",
+    "c": "Korzyści",
+    "d": "Wartości",
+    "correct": "b"
+  },
+  {
+    "question": "Który z wymienionych modeli jest używany we Freepik do generowania spójnych kreacji reklamowych (np. z logo i produktem)?",
+    "a": "Gemini Pro",
+    "b": "Nano Banana",
+    "c": "VEO 3",
+    "d": "Bielik",
+    "correct": "b"
+  },
+  {
+    "question": "W ElevenLabs, proces 'Professional Voice Cloning' (PVC) kończy się etapem treningu po pomyślnej:",
+    "a": "Opłacie subskrypcji kartą kredytową",
+    "b": "Weryfikacji Voice Captcha (nagraniu próbki na żywo)",
+    "c": "Analizie 100 stron tekstu",
+    "d": "Instalacji aplikacji na telefonie",
+    "correct": "b"
+  },
+  {
+    "question": "Jakie narzędzie (dostępne m.in. we Freepik) pozwala powiększać stare zdjęcia bez utraty jakości (upscaling)?",
+    "a": "Magnific",
+    "b": "ElevenLabs",
+    "c": "Miro AI",
+    "d": "Lovable",
+    "correct": "a"
+  },
+  {
+    "question": "W frameworku FRAME, etap 'Render' polega na:",
+    "a": "Przygotowaniu specyfikacji i planu",
+    "b": "Budowie (wygenerowaniu) strony internetowej",
+    "c": "Testowaniu scenariuszy błędów",
+    "d": "Podpięciu domeny",
+    "correct": "b"
+  },
+  {
+    "question": "Model Bloom, który był europejską odpowiedzią na modele OpenAI, pojawił się w:",
+    "a": "Styczniu 2021 r.",
+    "b": "Lipcu 2022 r.",
+    "c": "Grudniu 2023 r.",
+    "d": "Lipcu 2024 r.",
+    "correct": "b"
+  },
+  {
+    "question": "Która technika promptowania polega na zadaniu pytania 'Jakie elementy powinien mieć dobry opis produktu?' przed zleceniem właściwego zadania?",
+    "a": "Zero-shot",
+    "b": "Tabula Rasa (Czysta tablica)",
+    "c": "DELTA",
+    "d": "SPICE",
+    "correct": "b"
+  },
+  {
+    "question": "W modelu BAB (Before-After-Bridge), 'Bridge' (Most) opisuje:",
+    "a": "Stagnację i chaos przed użyciem produktu",
+    "b": "Świat możliwości i spokoju po zmianie",
+    "c": "Produkt jako rozwiązanie umożliwiające transformację",
+    "d": "Konkurencję na rynku",
+    "correct": "c"
+  },
+  {
+    "question": "Archetyp 'Buntownik' charakteryzuje się dążeniem do:",
+    "a": "Utrzymania status quo i kontroli",
+    "b": "Rewolucji i burzenia zasad",
+    "c": "Szczęścia i optymizmu",
+    "d": "Prawdy i analizy danych",
+    "correct": "b"
+  },
+  {
+    "question": "Jak nazywa się model AI od Google przeznaczony do generowania wideo, wspomniany w lekcji Krystiana Wydro?",
+    "a": "Nano",
+    "b": "VEO",
+    "c": "Bielik",
+    "d": "Sora",
+    "correct": "b"
+  },
+  {
+    "question": "W narzędziu Miro, do czego służy funkcja 'Bezwzględny Product Lead' opisana w promptach?",
+    "a": "Do automatycznego usuwania nieaktywnych użytkowników",
+    "b": "Do błyskawicznego przekształcania feedbacku w hipotezy produktowe i user flow",
+    "c": "Do generowania obrazów w stylu 3D",
+    "d": "Do tłumaczenia tablic na język angielski",
+    "correct": "b"
+  },
+  {
+    "question": "W frameworku Lovable, integracja z bazą danych Supabase odbywa się poprzez:",
+    "a": "Ręczne kopiowanie kodu PHP",
+    "b": "Wydanie polecenia w języku naturalnym (np. 'Connect it to Supabase')",
+    "c": "Instalację wtyczki WordPress",
+    "d": "Wpisanie numeru karty kredytowej",
+    "correct": "b"
+  },
+  {
+    "question": "W rytualizacji marki, 'Powrót do obozowiska' to rytuał związany z:",
+    "a": "Porannym przygotowaniem do pracy",
+    "b": "Wieczornym odprężeniem i zrzuceniem 'zbroi'",
+    "c": "Budowaniem więzi i piknikiem",
+    "d": "Zabezpieczeniem zamków przed snem",
+    "correct": "b"
+  },
+  {
+    "question": "Co oznacza skrót 'ROI' w kontekście kalkulatorów budowanych w Lovable?",
+    "a": "Return on Information",
+    "b": "Return on Investment",
+    "c": "Rate of Interest",
+    "d": "Risk of Innovation",
+    "correct": "b"
+  },
+  {
+    "question": "Technika 'mimiki werbalnej' w modelu PAS polega na:",
+    "a": "Używaniu skomplikowanego żargonu medycznego",
+    "b": "Naśladowaniu dokładnie tych słów, których użył klient do nazwania problemu",
+    "c": "Nagrywaniu głosu klienta w ElevenLabs",
+    "d": "Ignorowaniu emocji odbiorcy",
+    "correct": "b"
+  },
+  {
+    "question": "Archetyp 'Mędrzec' obiecuje swoim odbiorcom:",
+    "a": "Zwycięstwo nad słabościami",
+    "b": "Prawdę, wiedzę i obiektywizm",
+    "c": "Wolność od ograniczeń",
+    "d": "Radość i beztroskę",
+    "correct": "b"
+  },
+  {
+    "question": "W ElevenLabs, funkcja 'Audio Native' pozwala na:",
+    "a": "Nagrywanie podcastów w studio",
+    "b": "Osadzenie odtwarzacza na stronie, który automatycznie czyta artykuły",
+    "c": "Tłumaczenie filmów z zachowaniem ruchu ust",
+    "d": "Generowanie efektów dźwiękowych (np. wybuchu)",
+    "correct": "b"
+  },
+  {
+    "question": "W procesie 'Professional Voice Cloning', zalecane jest przesłanie minimum ilu minut czystego nagrania dla najlepszych efektów?",
+    "a": "1 minuta",
+    "b": "10 minut (minimum), najlepiej 30 minut",
+    "c": "60 minut",
+    "d": "5 godzin",
+    "correct": "b"
+  },
+  {
+    "question": "Który z wymienionych elementów NIE wchodzi w skład standardowej pętli agentowej opisanej w materiałach?",
+    "a": "Planowanie i refleksja",
+    "b": "Działanie",
+    "c": "Obserwacja",
+    "d": "Przechowywanie kluczy API w pliku tekstowym",
+    "correct": "d"
+  },
+  {
+    "question": "Zjawisko 'paragonów grozy' w AI dotyczy:",
+    "a": "Błędów w generowaniu faktur przez modele LLM",
+    "b": "Wysokich kosztów API wynikających z dużego zużycia tokenów",
+    "c": "Kradzieży danych kart płatniczych",
+    "d": "Niskiej jakości wygenerowanych grafik",
+    "correct": "b"
+  },
+  {
+    "question": "Archetyp 'Kochanek' skupia się w komunikacji na:",
+    "a": "Prostocie i bezpieczeństwie",
+    "b": "Zmysłowości, pięknie i pasji",
+    "c": "Kontroli i statusie społecznym",
+    "d": "Innowacji i procesie tworzenia",
+    "correct": "b"
+  },
+  {
+    "question": "W modelu SCAMPER, 'A' oznacza 'Adapt' (Dostosuj). Przykładem tego działania jest:",
+    "a": "Zastąpienie drewna plastikiem",
+    "b": "Wzorowanie się na popularnych bajkach (np. figurki Królewny Śnieżki)",
+    "c": "Usunięcie farby z klocków",
+    "d": "Powiększenie skali zabawek",
+    "correct": "b"
+  },
+  {
+    "question": "W Miro, funkcja 'OCR' (Optical Character Recognition) pozwala na:",
+    "a": "Przetłumaczenie transkryptu na 100 języków",
+    "b": "Przekształcenie zdjęcia fizycznych karteczek w edytowalne cyfrowe notatki",
+    "c": "Wygenerowanie głosu lektora",
+    "d": "Stworzenie logotypu",
+    "correct": "b"
+  },
+  {
+    "question": "Który z wymienionych trybów generowania animacji polega na przekształceniu gotowego nagrania w inną formę (np. zmianę stylu postaci)?",
+    "a": "Text to video",
+    "b": "Image to video",
+    "c": "Video to video",
+    "d": "Prompt to video",
+    "correct": "c"
+  },
+  {
+    "question": "Zgodnie z webinaru dyskusją, 'Human in the lead' oznacza, że człowiek:",
+    "a": "Jest tylko częścią pętli decyzyjnej",
+    "b": "Jest właścicielem procesu, projektuje go i zarządza ryzykiem",
+    "c": "Ręcznie przepisuje każdą odpowiedź AI",
+    "d": "Nie musi znać regulaminów usług",
+    "correct": "b"
+  },
+  {
+    "question": "W ElevenLabs, narzędzie 'Scribe' służy do:",
+    "a": "Generowania muzyki",
+    "b": "Zamiany mowy na tekst w ponad 90 językach",
+    "c": "Klonowania głosu",
+    "d": "Izolowania głosu z szumu",
+    "correct": "b"
+  },
+  {
+    "question": "Jaką funkcję pełni 'Voice Captcha' w systemie ElevenLabs?",
+    "a": "Szyfruje pliki audio",
+    "b": "Zabezpiecza przed sklonowaniem cudzego głosu bez jego udziału",
+    "c": "Dodaje efekty specjalne do głosu",
+    "d": "Zmniejsza rozmiar pliku wyjściowego",
+    "correct": "b"
+  },
+  {
+    "question": "W frameworku FRAME, litera 'M' oznacza 'Mock'. Co dzieje się na tym etapie?",
+    "a": "Publikacja strony dla świata",
+    "b": "Symulowanie testów i weryfikacja scenariuszy",
+    "c": "Podpięcie bazy danych",
+    "d": "Wybór kolorystyki strony",
+    "correct": "b"
+  },
+  {
+    "question": "Archetyp 'Władca' w swojej komunikacji obiecuje klientowi:",
+    "a": "Rewolucję i zmianę",
+    "b": "Przejęcie kontroli nad życiem, finansami i porządkiem",
+    "c": "Troskę i empatię",
+    "d": "Czystą radość i zabawę",
+    "correct": "b"
+  },
+  {
+    "question": "W technice Kwiatu Lotosu, po wybraniu płatka staje się on:",
+    "a": "Rozwiązaniem końcowym",
+    "b": "Centralnym problemem do dalszego rozwijania",
+    "c": "Plikiem Markdown na dysku",
+    "d": "Nagłówkiem w modelu AIDA",
+    "correct": "b"
+  },
+  {
+    "question": "Według lekcji Pawła Tkaczyka, blokada pisarska wynika najczęściej z:",
+    "a": "Braku pomysłów",
+    "b": "Nadmiaru pomysłów i chaosu, którego nie potrafimy uporządkować",
+    "c": "Zbyt wolnego komputera",
+    "d": "Braku dostępu do internetu",
+    "correct": "b"
+  },
+  {
+    "question": "Zgodnie z materiałami, o ile wzrasta zadowolenie z wyników pracy AI, gdy prompt zawiera około 21 słów zamiast średniej rynkowej wynoszącej 9 słów?",
+    "a": "O 20%",
+    "b": "O 40%",
+    "c": "O 50%",
+    "d": "Materiały wskazują na 'lepsze zadowolenie' bez podania konkretnej wartości procentowej",
+    "correct": "d"
+  },
+  {
+    "question": "Model Bielik w wersji 3.0 posiada 11 miliardów parametrów. Jaka precyzja (kwantyzacja) jest domyślnie rekomendowana przez LM Studio dla standardowych konfiguracji sprzętowych?",
+    "a": "Q8_0",
+    "b": "Q4_K_M",
+    "c": "Q4 (zależnie od RAM komputera)",
+    "d": "FP16",
+    "correct": "c"
+  },
+  {
+    "question": "Kiedy dokładnie polski model Bielik stał się modelem wielojęzycznym, obsługującym ponad 35 języków?",
+    "a": "W styczniu 2024 r.",
+    "b": "W lipcu 2025 r.",
+    "c": "W grudniu 2025 r.",
+    "d": "W maju 2026 r.",
+    "correct": "c"
+  },
+  {
+    "question": "W technologii RAG, proces zamiany fragmentów tekstu na liczbową reprezentację opisującą ich znaczenie nazywamy:",
+    "a": "Groundingiem",
+    "b": "Wektoryzacją (embeddingami)",
+    "c": "Fine-tuningiem",
+    "d": "Scaffoldingiem",
+    "correct": "b"
+  },
+  {
+    "question": "Jakie są maksymalne limity dla pojedynczego źródła w NotebookLM?",
+    "a": "200 tysięcy słów lub 100 MB",
+    "b": "500 tysięcy słów lub 200 MB",
+    "c": "1 milion słów lub 500 MB",
+    "d": "Limit nie istnieje dla subskrypcji Pro",
+    "correct": "b"
+  },
+  {
+    "question": "Narzędzie STORM, służące do akademickiego researchu, zostało udostępnione przez:",
+    "a": "Google DeepMind",
+    "b": "Stanford University",
+    "c": "MIT",
+    "d": "OpenAI",
+    "correct": "b"
+  },
+  {
+    "question": "Która funkcja NotebookLM pozwala na stworzenie debaty między dwoma prezenterami na temat Twoich źródeł?",
+    "a": "Szczegółowe omówienie",
+    "b": "Analiza krytyczna",
+    "c": "Debata (w sekcji Dostosuj)",
+    "d": "Cinematic Video Overview",
+    "correct": "c"
+  },
+  {
+    "question": "Znak wodny SynthID, służący do oznaczania treści AI, jest formą:",
+    "a": "Metadanych w formacie EXIF",
+    "b": "Niewidzialnego dla oka szumu",
+    "c": "Kodu QR ukrytego w pikselach",
+    "d": "Tagu C2PA",
+    "correct": "b"
+  },
+  {
+    "question": "Model AlphaFold, który otrzymał Nobla w 2024 roku, przewidział strukturę niemal wszystkich znanych białek. Ile struktur obejmuje ta baza?",
+    "a": "20 milionów",
+    "b": "100 milionów",
+    "c": "200 milionów",
+    "d": "500 milionów",
+    "correct": "c"
+  },
+  {
+    "question": "Chip kwantowy Willow wykonuje obliczenia szybciej niż najpotężniejszy superkomputer na Ziemi o:",
+    "a": "1 000 razy",
+    "b": "10 000 razy",
+    "c": "13 000 razy",
+    "d": "100 000 razy",
+    "correct": "c"
+  },
+  {
+    "question": "W Gemini, funkcja 'Deep Research' w modelu 3.1 Pro pozwala na generowanie raportów, które w formie tekstowej mogą mieć nawet:",
+    "a": "5 stron",
+    "b": "10 stron",
+    "c": "20 stron",
+    "d": "50 stron",
+    "correct": "c"
+  },
+  {
+    "question": "Która technika nauki z AI opiera się na budowaniu 'rusztowania wiedzy' warstwa po warstwie?",
+    "a": "Active Recall",
+    "b": "Scaffolding",
+    "c": "One-shot prompting",
+    "d": "RAG",
+    "correct": "b"
+  },
+  {
+    "question": "Jakie jest główne ograniczenie NotebookLM w kontekście obsługi filmów z YouTube?",
+    "a": "Obsługuje tylko filmy w jakości 4K",
+    "b": "Obsługuje tylko filmy z kanałów zweryfikowanych",
+    "c": "Obsługuje tylko filmy publiczne z napisami",
+    "d": "Obsługuje tylko filmy trwające powyżej 10 minut",
+    "correct": "c"
+  },
+  {
+    "question": "W systemie Wiki Pawła Tkaczyka, procedura 'Ingest' polega na:",
+    "a": "Usuwaniu duplikatów plików RAW",
+    "b": "Zamianie źródeł na encje, interpretacje i style (pliki .md)",
+    "c": "Szyfrowaniu bazy danych przed wysyłką do API",
+    "d": "Generowaniu grafik do artykułów",
+    "correct": "b"
+  },
+  {
+    "question": "Co oznacza skrót 'T' w architekturze Transformer, opracowanej przez Google w 2017 roku?",
+    "a": "Technical",
+    "b": "Transfer",
+    "c": "Transformer",
+    "d": "Translation",
+    "correct": "c"
+  },
+  {
+    "question": "W ustawieniach prywatności Gemini, po jakim czasie można ustawić automatyczne usuwanie danych aktywności?",
+    "a": "Tylko po 18 miesiącach",
+    "b": "Po 3, 18 lub 36 miesiącach",
+    "c": "Po 1, 6 lub 12 miesiącach",
+    "d": "Tylko po 24 miesiącach",
+    "correct": "b"
+  },
+  {
+    "question": "Które narzędzie do researchu jest wskazane jako 'najszybsze', idealne do przygotowania się 5 minut przed spotkaniem?",
+    "a": "Gemini Deep Research",
+    "b": "Perplexity Pro",
+    "c": "STORM",
+    "d": "Claude Research",
+    "correct": "b"
+  },
+  {
+    "question": "System Flothub (Flood Hub) potrafi przewidzieć wylewy rzek z wyprzedzeniem do:",
+    "a": "24 godzin",
+    "b": "3 dni",
+    "c": "7 dni",
+    "d": "14 dni",
+    "correct": "c"
+  },
+  {
+    "question": "Model MedGemini wspiera lekarzy w analizie mammografii. O ile więcej nowotworów wykrywa w porównaniu do ludzkiego oka?",
+    "a": "O 5%",
+    "b": "O 9%",
+    "c": "O 15%",
+    "d": "O 20%",
+    "correct": "b"
+  },
+  {
+    "question": "W kontekście promptowania, technika 'one-shot' polega na:",
+    "a": "Wpisaniu polecenia za jednym razem bez feedbacku",
+    "b": "Dostarczeniu dokładnie jednego przykładu oczekiwanego wyniku",
+    "c": "Użyciu tylko jednego modelu do zadania",
+    "d": "Wygenerowaniu obrazu z jednego słowa",
+    "correct": "b"
+  },
+  {
+    "question": "Jaka jest maksymalna liczba źródeł, które można dodać do jednego notatnika w podstawowej wersji NotebookLM?",
+    "a": "10",
+    "b": "25",
+    "c": "50",
+    "d": "100",
+    "correct": "c"
+  },
+  {
+    "question": "Architektura Transformer, będąca fundamentem dzisiejszych modeli GPT, została zaprezentowana w roku:",
+    "a": "2015",
+    "b": "2017",
+    "c": "2019",
+    "d": "2021",
+    "correct": "b"
+  },
+  {
+    "question": "Który archetyp marki skupia się na obietnicy prawdy, wiedzy i obiektywizmu?",
+    "a": "Opiekun",
+    "b": "Mędrzec",
+    "c": "Buntownik",
+    "d": "Odkrywca",
+    "correct": "b"
+  },
+  {
+    "question": "W ElevenLabs, jak nazywa się proces klonowania głosu wymagający 'Voice Captcha'?",
+    "a": "Instant Voice Cloning",
+    "b": "Professional Voice Cloning",
+    "c": "Voice Design",
+    "d": "Audio Native",
+    "correct": "b"
+  },
+  {
+    "question": "Czym jest 'Shadow AI' w środowisku korporacyjnym?",
+    "a": "Modelami AI działającymi w trybie incognito",
+    "b": "Używaniem AI przez pracowników bez zgody IT/organizacji",
+    "c": "Atakami hakerskimi na infrastrukturę AI",
+    "d": "Generowaniem mrocznych grafik",
+    "correct": "b"
+  },
+  {
+    "question": "Co to jest 'Context Doc' w strategii inżynierii kontekstu?",
+    "a": "Systemowy prompt ukryty w kodzie",
+    "b": "Dedykowany plik z bazą wiedzy o projekcie/marce załączany do rozmowy",
+    "c": "Dokumentacja techniczna modelu Gemini",
+    "d": "Historia rozmów z chatbotem",
+    "correct": "b"
+  },
+  {
+    "question": "Technika 'mimiki werbalnej' polega na:",
+    "a": "Klonowaniu głosu klienta",
+    "b": "Naśladowaniu słów, których klient użył do opisu swojego bólu/problemu",
+    "c": "Używaniu emoji pasujących do nastroju rozmówcy",
+    "d": "Tłumaczeniu żargonu na język potoczny",
+    "correct": "b"
+  },
+  {
+    "question": "W modelu SCAMPER, co oznacza litera 'M'?",
+    "a": "Modyfikuj / Powiększ (Modify / Magnify)",
+    "b": "Mapuj (Map)",
+    "c": "Mieszaj (Mix)",
+    "d": "Motywuj (Motivate)",
+    "correct": "a"
+  },
+  {
+    "question": "Ile kroków (pytań) zadaje Gem 'Osobista Rada Nadzorcza' w pierwszym etapie budowania person?",
+    "a": "3",
+    "b": "5",
+    "c": "10",
+    "d": "Brak stałej liczby",
+    "correct": "b"
+  },
+  {
+    "question": "Zjawisko 'AI Slop' to:",
+    "a": "Niska wydajność modeli podczas przeciążenia serwerów",
+    "b": "Niskiej jakości, niezweryfikowane treści AI wrzucane do obiegu",
+    "c": "Błąd matematyczny w wagach modelu",
+    "d": "Wyciek danych treningowych",
+    "correct": "b"
+  },
+  {
+    "question": "Model Gemini 1.5 Flash jest zoptymalizowany pod kątem:",
+    "a": "Najwyższej możliwej jakości grafiki",
+    "b": "Szybkości i wydajności (idealny do łańcuchów zadań)",
+    "c": "Pisania długich powieści",
+    "d": "Analizy wyłącznie plików audio",
+    "correct": "b"
+  },
+  {
+    "question": "W NotebookLM, przycisk 'Kliknij' (z ikoną synchronizacji) przy źródle z Dysku Google służy do:",
+    "a": "Automatycznego śledzenia zmian w czasie rzeczywistym",
+    "b": "Ręcznego odświeżenia zawartości dokumentu w notatniku",
+    "c": "Udostępnienia pliku innym osobom",
+    "d": "Usunięcia pliku z pamięci AI",
+    "correct": "b"
+  },
+  {
+    "question": "Formuła '=ai' w Arkuszach Google (Gemini for Workspace) służy do:",
+    "a": "Liczenia sumy wydatków",
+    "b": "Wykonywania zadań AI bezpośrednio w komórkach (np. kategoryzacji)",
+    "c": "Tworzenia wykresów 3D",
+    "d": "Blokowania dostępu do arkusza",
+    "correct": "b"
+  },
+  {
+    "question": "Czym różni się model zamknięty od otwartego?",
+    "a": "Model zamknięty nie ma dostępu do internetu",
+    "b": "W modelu otwartym mamy dostęp do architektury, kodu i wag",
+    "c": "Modele zamknięte są zawsze darmowe",
+    "d": "Modele otwarte nie mogą generować obrazów",
+    "correct": "b"
+  },
+  {
+    "question": "Zasada 'najmniejszych przywilejów' (Least Privilege) w kontekście integracji bota z Gmailem oznacza:",
+    "a": "Danie botowi pełnego dostępu 'na wszelki wypadek'",
+    "b": "Ograniczenie dostępu bota tylko do niezbędnych folderów/akcji",
+    "c": "Zabronienie botowi czytania maili",
+    "d": "Korzystanie tylko z darmowych wtyczek",
+    "correct": "b"
+  },
+  {
+    "question": "W ElevenLabs, proces klonowania PVC wymaga przesłania nagrań o łącznej długości minimum:",
+    "a": "1 minuty",
+    "b": "10 minut",
+    "c": "30 minut",
+    "d": "60 minut",
+    "correct": "b"
+  },
+  {
+    "question": "Kto jest administratorem danych w darmowej wersji Gemini?",
+    "a": "Google",
+    "b": "Indywidualny użytkownik (ma kontrolę nad ustawieniami)",
+    "c": "Dział IT firmy użytkownika",
+    "d": "Nikt, dane są publiczne",
+    "correct": "b"
+  },
+  {
+    "question": "Technika 'Cross-model feedback' polega na:",
+    "a": "Pytaniu tej samej instancji modelu o poprawki",
+    "b": "Użyciu innego modelu AI do oceny i poprawy pracy poprzednika",
+    "c": "Ręcznym poprawianiu tekstu w Wordzie",
+    "d": "Łączeniu wyników z Gemini i ChatGPT w jeden plik",
+    "correct": "b"
+  },
+  {
+    "question": "Model Bloom, będący europejską alternatywą dla modeli zamkniętych, pojawił się w:",
+    "a": "Lipcu 2022 r.",
+    "b": "Grudniu 2023 r.",
+    "c": "Styczniu 2024 r.",
+    "d": "Czerwcu 2021 r.",
+    "correct": "a"
+  },
+  {
+    "question": "Nagroda Nobla z fizyki w 2025 roku trafiła do naukowca Google zajmującego się:",
+    "a": "Zwijaniem białek",
+    "b": "Sprzętem kwantowym (chip Willow)",
+    "c": "Konektomiką mózgu",
+    "d": "Prognozowaniem powodzi",
+    "correct": "b"
+  },
+  {
+    "question": "Co to jest 'Grounding' w NotebookLM?",
+    "a": "Uziemienie serwerów",
+    "b": "Osadzenie odpowiedzi w konkretnych faktach ze źródeł z podaniem przypisów",
+    "c": "Proces trenowania modelu na danych lokalnych",
+    "d": "Blokada generowania treści niebezpiecznych",
+    "correct": "b"
+  },
+  {
+    "question": "W architekturze Wiki, plik 'Skills.md' zawiera:",
+    "a": "Certyfikaty użytkownika",
+    "b": "Instrukcje ładowane dynamicznie do kontekstu przy słowach kluczowych",
+    "c": "Kody błędów API",
+    "d": "Listę haseł do kont społecznościowych",
+    "correct": "b"
+  },
+  {
+    "question": "Technika 'Reverse Prompting' jest szczególnie przydatna, gdy:",
+    "a": "Chcemy, aby AI zapomniało poprzednią rozmowę",
+    "b": "Chcemy uzyskać opis/prompt na podstawie istniejącego zdjęcia",
+    "c": "Chcemy przetłumaczyć prompt na język włoski",
+    "d": "Model uległ halucynacji",
+    "correct": "b"
+  },
+  {
+    "question": "W ramach projektu Glikoshield, polscy naukowcy z UJ korzystają z:",
+    "a": "Modelu Bielik",
+    "b": "Systemu AlphaFold",
+    "c": "Chipu Willow",
+    "d": "Narzędzia STORM",
+    "correct": "b"
+  },
+  {
+    "question": "Jaką funkcję pełni 'Human Review' w darmowych wersjach narzędzi AI?",
+    "a": "Poprawianie ortografii użytkownika",
+    "b": "Przeglądanie anonimizowanych rozmów przez pracowników w celu ulepszania modelu",
+    "c": "Zatwierdzanie każdego promptu przed wysłaniem",
+    "d": "Blokowanie dostępu do narzędzia dzieciom",
+    "correct": "b"
+  },
+  {
+    "question": "W modelu FAB, stwierdzenie 'Bateria wytrzymuje 48 godzin' to:",
+    "a": "Zaleta",
+    "b": "Cecha",
+    "c": "Korzyść",
+    "d": "Przewaga",
+    "correct": "b"
+  },
+  {
+    "question": "Narzędzie 'LittleSnitch' lub 'Lulu' służy do:",
+    "a": "Podglądania promptów konkurencji",
+    "b": "Monitorowania połączeń wychodzących z komputera (bezpieczeństwo)",
+    "c": "Generowania miniatur do YouTube",
+    "d": "Liczenia tokenów",
+    "correct": "b"
+  },
+  {
+    "question": "W systemie Wiki Pawła Tkaczyka, plik 'Index.md' to:",
+    "a": "Baza wszystkich haseł",
+    "b": "Mapa wiedzy ze streszczeniami wszystkich plików w folderze",
+    "c": "Plik instalacyjny bota",
+    "d": "Regulamin dla agentów",
+    "correct": "b"
+  },
+  {
+    "question": "GEMA to przykład modelu:",
+    "a": "Zamkniętego",
+    "b": "Otwartego",
+    "c": "Multimodalnego wideo",
+    "d": "Dostępnego tylko w Workspace",
+    "correct": "b"
+  },
+  {
+    "question": "Czym jest 'Antimacaronism list' w kontekście Brand Voice?",
+    "a": "Listą zakazanych makaronizmów i zbędnych zapożyczeń",
+    "b": "Spisem dań w menu restauracji",
+    "c": "Zbiorem technicznych terminów IT",
+    "d": "Listą modeli AI",
+    "correct": "a"
+  }
+]
