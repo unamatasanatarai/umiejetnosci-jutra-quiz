@@ -9,6 +9,7 @@
 <body>
     <div id="app-root"></div>
 
+    <!-- IDLE SCREEN TEMPLATE -->
     <template id="tpl-idle">
         <div class="card idle-container">
             <h1 class="title">Interactive Local Quiz</h1>
@@ -26,6 +27,7 @@
         </div>
     </template>
 
+    <!-- READY SCREEN TEMPLATE -->
     <template id="tpl-ready">
         <div class="card ready-container">
             <h1 class="title">Quiz Structure Approved</h1>
@@ -42,19 +44,20 @@
                 </div>
             </div>
 
-            <div class="actions-container">
-                <button id="btn-start-quiz" class="btn btn-primary">
-                    <span>Start Quiz</span>
-                    <kbd class="kbd-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 10l-5 5 5 5M4 15h11a4 4 0 0 0 4-4V5"/></svg></kbd>
-                </button>
+            <div class="actions-split-grid">
                 <button id="btn-cancel-ready" class="btn btn-secondary">
                     <span>Cancel</span>
                     <kbd class="kbd-badge">Esc</kbd>
+                </button>
+                <button id="btn-start-quiz" class="btn btn-primary">
+                    <span>Start Quiz</span>
+                    <kbd class="kbd-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 10l-5 5 5 5M4 15h11a4 4 0 0 0 4-4V5"/></svg></kbd>
                 </button>
             </div>
         </div>
     </template>
 
+    <!-- QUIZ SCREEN TEMPLATE -->
     <template id="tpl-quiz">
         <div class="card quiz-container">
             <div class="quiz-header">
@@ -80,6 +83,7 @@
         </div>
     </template>
 
+    <!-- SUMMARY SCREEN TEMPLATE -->
     <template id="tpl-summary">
         <div class="card summary-container">
             <h1 class="title">Session Completed</h1>
@@ -104,13 +108,14 @@
                 </div>
             </div>
 
-            <div class="actions-inline-grid">
+            <div class="actions-split-grid">
                 <button id="btn-review-mode" class="btn btn-primary">Review Incorrect Answers</button>
                 <button id="btn-restart-session" class="btn btn-secondary">Restart Session</button>
             </div>
         </div>
     </template>
 
+    <!-- REVIEW SCREEN TEMPLATE -->
     <template id="tpl-review">
         <div class="card review-container">
             <div class="review-header">

@@ -291,19 +291,16 @@
             progressText.textContent = `Question ${currentIndex + 1} of ${state.selectedQuestions.length}`;
             questionText.textContent = currentQuestion.questionText;
 
-            // Apply dynamic contextual updates to the navigation button layout
             if (isLastQuestion) {
                 nextBtnText.textContent = "Finish Quiz";
             } else {
                 nextBtnText.textContent = "Next Question";
             }
 
-            const totalAllocatedSec = state.selectedQuestions.length * CONFIG.SEC_PER_QUESTION;
             const currentRemainingMs = state.phase === "feedback" ? state.pausedRemainingMs : Math.max(0, state.endTimestamp - Date.now());
             const currentRemainingSec = Math.ceil(currentRemainingMs / 1000);
             timerText.textContent = formatTime(currentRemainingSec);
 
-            // Compute structural progress ratio relative to answered index
             const trackingPct = state.selectedQuestions.length > 0 ? ((currentIndex + (state.phase === "feedback" ? 1 : 0)) / state.selectedQuestions.length) * 100 : 0;
             progressBar.style.width = `${trackingPct}%`;
 
@@ -321,7 +318,6 @@
                 txtSpan.textContent = choiceString;
                 btn.appendChild(txtSpan);
 
-                // Add interactive hardware layout mapping configurations
                 const badgeKbd = document.createElement("kbd");
                 badgeKbd.className = "kbd-badge";
                 
@@ -378,7 +374,6 @@
             pctText.textContent = `${finalPercentage}%`;
             ratioText.textContent = `${correctCount} / ${totalItems}`;
 
-            // Threshold Logic Evaluation Rule
             if (finalPercentage >= CONFIG.PASS_THRESHOLD_PCT) {
                 heroBlock.className = "score-hero pass";
                 badgeText.textContent = "Passed";
@@ -393,7 +388,6 @@
             const actualElapsedMs = Math.max(0, totalAvailableMs - state.pausedRemainingMs);
             durationText.textContent = formatTime(Math.round(actualElapsedMs / 1000));
 
-            // If zero errors, safely disable the dashboard review link block
             if (correctCount === totalItems) {
                 reviewBtn.disabled = true;
                 reviewBtn.textContent = "No Errors to Review";
