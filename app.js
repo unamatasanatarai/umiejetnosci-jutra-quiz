@@ -14,7 +14,8 @@
         SEC_PER_QUESTION: 72,
         ALLOWED_CHOICES: ['a', 'b', 'c', 'd'],
         PASS_THRESHOLD_PCT: 80,
-        DEFAULT_LANGUAGE: "pl" // Set active default target dictionary
+        DEFAULT_LANGUAGE: "pl", // Set active default target dictionary
+        PRELOADED_FILE: "quiz.json"
     };
 
     // ==========================================
@@ -30,39 +31,39 @@
             },
             idle: {
                 title: "Umiejętności Jutra",
-                subtitle: "Upload a quiz JSON file to instantly start your secure, offline assessment session.",
-                dropzone: "Drag and drop your quiz file here or click to browse"
+                subtitle: "Test your AI knowlege",
+                launchBtn: "Launch Preloaded Quiz",
+                dropzone: "You are ready to go, or you can load your own questions by dragging and dropping here"
             },
             ready: {
                 title: "Quiz Structure Approved",
-                subtitle: "You may start.",
+                subtitle: "Questions loaded, and ready to go!",
                 allocated: "Allocated Questions",
                 budget: "Total Time",
                 cancel: "Cancel"
             },
             summary: {
-                title: "Completed.",
                 correctAnswers: "Correct Answers",
-                timeElapsed: "Elapsed",
+                timeElapsed: "Time Elapsed",
                 passedBadge: "Passed",
                 failedBadge: "Not quite",
-                passedMsg: "Outstanding performance! You are ready!",
-                failedMsg: "Review session recommended. Minimum passing target is set to a strict 80%.",
+                passedMsg: "Outstanding performance!",
+                failedMsg: "Review session recommended. Minimum passing target is 80%.",
                 reviewBtn: "Review Incorrect Answers",
                 noErrorsBtn: "No Errors to Review",
                 restartBtn: "Restart",
                 ratio: "{correct} / {total}"
             },
             review: {
-                title: "Needs learning",
+                title: "Review Mode",
                 progress: "Question {current} of {total}",
-                empty: "Perfect score achieved! You are ready!. 🎉",
+                empty: "Perfect score! 🎉",
                 prev: "Previous",
                 next: "Next",
                 exit: "Exit Review"
             },
             errors: {
-                invalidFile: "Oops — I can't seem to load this 😅"
+                invalidFile: "Oops — I can't read this file 😅"
             }
         },
         pl: {
@@ -74,39 +75,39 @@
             },
             idle: {
                 title: "Umiejętności Jutra",
-                subtitle: "Prześlij plik JSON z quizem, aby natychmiast rozpocząć bezpieczną sesję offline.",
-                dropzone: "Przeciągnij i upuść plik tutaj lub kliknij, aby przeglądać"
+                subtitle: "Przetestuj swoją wiedzę AI.",
+                launchBtn: "Uruchom wbudowany quiz",
+                dropzone: "Wszystko gotowe! Możesz też załadować własne pytania przeciągając i upuszczając plik tutaj"
             },
             ready: {
-                title: "Quiz gotowy",
-                subtitle: "Możesz zaczynać",
-                allocated: "Liczba pytań",
-                budget: "Czas",
+                title: "Struktura Quizu Zatwierdzona",
+                subtitle: "Pytania wgrane, gotowe, możesz ruszać.",
+                allocated: "Przydzielone Pytania",
+                budget: "Całkowity Czas",
                 cancel: "Anuluj"
             },
             summary: {
-                title: "Koniec!",
                 correctAnswers: "Poprawne Odpowiedzi",
-                timeElapsed: "Czas Trwania",
+                timeElapsed: "Czas",
                 passedBadge: "Zaliczony",
                 failedBadge: "Niecałkiem",
-                passedMsg: "Doskonały wynik! Zaliczone!",
-                failedMsg: "Próg zdawalności to 80%.",
+                passedMsg: "Doskonały wynik!",
+                failedMsg: "Próg zdawalności to 80%",
                 reviewBtn: "Przejrzyj Błędne Odpowiedzi",
                 noErrorsBtn: "Brak Błędów do Przejrzenia",
                 restartBtn: "Uruchom Ponownie",
                 ratio: "{correct} z {total}"
             },
             review: {
-                title: "Do nauki...",
-                progress: "Pytanie {current} z {total}",
-                empty: "Idealny wynik osiągnięty! Brak błędów! 🎉",
+                title: "Przegląd",
+                progress: "Pytnaie {current} z {total}",
+                empty: "Idealny wynik! 🎉",
                 prev: "Poprzednie",
                 next: "Następne",
-                exit: "Wyjdź"
+                exit: "Wyjdź z Przeglądu"
             },
             errors: {
-                invalidFile: "Ups — coś nie umiem tego pliku odczytać 😅"
+                invalidFile: "Ups — nie umiem odczytać tego pliku 😅"
             }
         }
     };
@@ -180,7 +181,8 @@
         finishedAt: null,
         reviewIndex: 0,
         reviewQuestions: [],
-        fileErrorFlag: false
+        fileErrorFlag: false,
+        preloadedQuestions: null
     };
 
     // ==========================================
@@ -303,6 +305,14 @@
             frag.getElementById("lbl-idle-subtitle").textContent = i18n.t("idle.subtitle");
             frag.getElementById("lbl-idle-dropzone").textContent = i18n.t("idle.dropzone");
 
+            const launchBtn = frag.getElementById("btn-launch-preloaded");
+            launchBtn.textContent = i18n.t("idle.launchBtn");
+            if (!state.preloadedQuestions) {
+                launchBtn.disabled = true;
+            } else {
+                launchBtn.addEventListener("click", () => eventBus.emit("LAUNCH_PRELOADED"));
+            }
+
             const banner = frag.getElementById("error-banner");
             const errorMsg = frag.getElementById("error-message");
             if (state.fileErrorFlag) {
@@ -406,7 +416,6 @@
 
         renderSummary(state) {
             const frag = this.cloneTemplate("tpl-summary");
-            frag.getElementById("lbl-summary-title").textContent = i18n.t("summary.title");
             frag.getElementById("lbl-summary-correct").textContent = i18n.t("summary.correctAnswers");
             frag.getElementById("lbl-summary-duration").textContent = i18n.t("summary.timeElapsed");
 
@@ -449,6 +458,10 @@
             rstBtn.addEventListener("click", () => eventBus.emit("RESTART_SESSION"));
 
             this.root.appendChild(frag);
+        },
+
+        renderOriginalReview(state) {
+            // Deprecated structural reference backup node
         },
 
         renderReview(state) {
@@ -509,7 +522,6 @@
     // ==========================================
     // 9. STATE MACHINE CONTROLLER INTERCEPTORS
     // ==========================================
-
     const sessionController = {
         init() {
             i18n.load(CONFIG.DEFAULT_LANGUAGE);
@@ -517,11 +529,13 @@
             this.bindEvents();
             this.bindKeys();
             this.bindFloatingControls();
+            this.preloadDefaultFile();
             this.route("idle");
         },
 
         bindEvents() {
             eventBus.on("FILE_SELECTED", (f) => this.processFile(f));
+            eventBus.on("LAUNCH_PRELOADED", () => this.launchPreloaded());
             eventBus.on("START_QUIZ", () => this.startQuiz());
             eventBus.on("ANSWER_SELECTED", (c) => this.selectAnswer(c));
             eventBus.on("NEXT_QUESTION", () => this.nextQuestion());
@@ -595,6 +609,34 @@
                 dropdownBtn.textContent = "";
                 dropdownBtn.appendChild(svgClone);
             }
+        },
+
+        preloadDefaultFile() {
+            fetch(CONFIG.PRELOADED_FILE)
+                .then(response => {
+                    if (!response.ok) throw new Error("Network configuration file load fault.");
+                    return response.json();
+                })
+                .then(parsed => {
+                    validator.validateSchema(parsed);
+                    STATE.preloadedQuestions = parsed;
+                    if (STATE.phase === "idle") {
+                        renderEngine.render(STATE);
+                    }
+                })
+                .catch(err => {
+                    console.warn("Failed to automatically preload quiz.json asset file.", err);
+                });
+        },
+
+        launchPreloaded() {
+            if (!STATE.preloadedQuestions) return;
+            STATE.fileErrorFlag = false;
+            STATE.allQuestions = STATE.preloadedQuestions;
+            STATE.selectedQuestions = questionManager.processAndNormalize(STATE.preloadedQuestions);
+            STATE.currentQuestionIndex = 0;
+            STATE.pausedRemainingMs = STATE.selectedQuestions.length * CONFIG.SEC_PER_QUESTION * 1000;
+            this.route("ready");
         },
 
         route(phase) { STATE.phase = phase; renderEngine.render(STATE); },
@@ -671,7 +713,8 @@
 
         resetSession() {
             timerManager.stop();
-            STATE = { phase: "idle", allQuestions: [], selectedQuestions: [], currentQuestionIndex: 0, pausedRemainingMs: 0, endTimestamp: 0, timerInterval: null, startedAt: null, finishedAt: null, reviewIndex: 0, reviewQuestions: [], fileErrorFlag: false };
+            const storedPreload = STATE.preloadedQuestions;
+            STATE = { phase: "idle", allQuestions: [], selectedQuestions: [], currentQuestionIndex: 0, pausedRemainingMs: 0, endTimestamp: 0, timerInterval: null, startedAt: null, finishedAt: null, reviewIndex: 0, reviewQuestions: [], fileErrorFlag: false, preloadedQuestions: storedPreload };
             this.route("idle");
         }
     };
