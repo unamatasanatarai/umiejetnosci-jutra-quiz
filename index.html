@@ -63,7 +63,7 @@
             </div>
             
             <div class="progress-bar-container">
-                <div id="quiz-progress-bar" class="progress-bar" style="width: 100%;"></div>
+                <div id="quiz-progress-bar" class="progress-bar" style="width: 0%;"></div>
             </div>
 
             <div class="question-body">
@@ -85,9 +85,12 @@
             <h1 class="title">Session Completed</h1>
             <p class="subtitle">Your ephemeral assessment metrics have been compiled successfully.</p>
             
-            <div class="score-display">
-                <span id="summary-percentage" class="score-pct">0%</span>
-                <span class="score-label">Aggregate Score</span>
+            <div id="summary-score-hero" class="score-hero">
+                <div class="score-ring">
+                    <span id="summary-percentage" class="score-pct">0%</span>
+                    <span id="summary-status-badge" class="status-badge">Status</span>
+                </div>
+                <p id="summary-status-msg" class="status-message">Feedback text block goes here.</p>
             </div>
 
             <div class="metrics-grid">
@@ -101,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="actions-vertical">
+            <div class="actions-inline-grid">
                 <button id="btn-review-mode" class="btn btn-primary">Review Incorrect Answers</button>
                 <button id="btn-restart-session" class="btn btn-secondary">Restart Session</button>
             </div>
@@ -125,14 +128,16 @@
             </div>
 
             <div class="review-footer">
-                <button id="btn-prev-review" class="btn btn-secondary">
-                    <kbd class="kbd-badge">←</kbd> <kbd class="kbd-badge">H</kbd>
-                    <span>Previous</span>
-                </button>
-                <button id="btn-next-review" class="btn btn-secondary">
-                    <span>Next</span>
-                    <kbd class="kbd-badge">L</kbd> <kbd class="kbd-badge">→</kbd>
-                </button>
+                <div class="review-nav-group">
+                    <button id="btn-prev-review" class="btn btn-secondary">
+                        <kbd class="kbd-badge">←</kbd> <kbd class="kbd-badge">H</kbd>
+                        <span>Previous</span>
+                    </button>
+                    <button id="btn-next-review" class="btn btn-secondary">
+                        <span>Next</span>
+                        <kbd class="kbd-badge">L</kbd> <kbd class="kbd-badge">→</kbd>
+                    </button>
+                </div>
                 <button id="btn-exit-review" class="btn btn-primary">
                     <span>Exit Review</span>
                     <kbd class="kbd-badge">Esc</kbd>

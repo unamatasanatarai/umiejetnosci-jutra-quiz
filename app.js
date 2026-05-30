@@ -12,7 +12,8 @@
     const CONFIG = {
         MAX_QUESTIONS: 50,
         SEC_PER_QUESTION: 72,
-        ALLOWED_CHOICES: ['a', 'b', 'c', 'd']
+        ALLOWED_CHOICES: ['a', 'b', 'c', 'd'],
+        PASS_THRESHOLD_PCT: 80 // Strict 80% boundary criteria limit
     };
 
     // ==========================================
@@ -297,13 +298,14 @@
                 nextBtnText.textContent = "Next Question";
             }
 
+            const totalAllocatedSec = state.selectedQuestions.length * CONFIG.SEC_PER_QUESTION;
             const currentRemainingMs = state.phase === "feedback" ? state.pausedRemainingMs : Math.max(0, state.endTimestamp - Date.now());
             const currentRemainingSec = Math.ceil(currentRemainingMs / 1000);
             timerText.textContent = formatTime(currentRemainingSec);
 
-            const totalAllocatedSec = state.selectedQuestions.length * CONFIG.SEC_PER_QUESTION;
-            const pctRatio = totalAllocatedSec > 0 ? (currentRemainingMs / (totalAllocatedSec * 1000)) * 100 : 0;
-            progressBar.style.width = `${pctRatio}%`;
+            // Compute structural progress ratio relative to answered index
+            const trackingPct = state.selectedQuestions.length > 0 ? ((currentIndex + (state.phase === "feedback" ? 1 : 0)) / state.selectedQuestions.length) * 100 : 0;
+            progressBar.style.width = `${trackingPct}%`;
 
             if (state.phase === "feedback") {
                 nextBtn.classList.remove("invisible");
@@ -319,12 +321,12 @@
                 txtSpan.textContent = choiceString;
                 btn.appendChild(txtSpan);
 
-                // Add secondary interactive discovery indicators
+                // Add interactive hardware layout mapping configurations
                 const badgeKbd = document.createElement("kbd");
                 badgeKbd.className = "kbd-badge";
                 
                 const numIndex = idx + 1;
-                const alphaChar = String.fromCharCode(65 + idx); // Generates labels A through D
+                const alphaChar = String.fromCharCode(65 + idx);
                 badgeKbd.textContent = `${numIndex}/${alphaChar}`;
                 btn.appendChild(badgeKbd);
 
@@ -358,7 +360,10 @@
 
         renderSummaryScreen(state) {
             const fragment = this.cloneTemplate("tpl-summary");
+            const heroBlock = fragment.getElementById("summary-score-hero");
             const pctText = fragment.getElementById("summary-percentage");
+            const badgeText = fragment.getElementById("summary-status-badge");
+            const messageText = fragment.getElementById("summary-status-msg");
             const ratioText = fragment.getElementById("summary-ratio");
             const durationText = fragment.getElementById("summary-duration");
             const reviewBtn = fragment.getElementById("btn-review-mode");
@@ -373,11 +378,29 @@
             pctText.textContent = `${finalPercentage}%`;
             ratioText.textContent = `${correctCount} / ${totalItems}`;
 
+            // Threshold Logic Evaluation Rule
+            if (finalPercentage >= CONFIG.PASS_THRESHOLD_PCT) {
+                heroBlock.className = "score-hero pass";
+                badgeText.textContent = "Passed";
+                messageText.textContent = "Outstanding performance! You have safely exceeded the structural passing criteria threshold.";
+            } else {
+                heroBlock.className = "score-hero fail";
+                badgeText.textContent = "Not quite";
+                messageText.textContent = "Review session recommended. Minimum passing target is set to a strict 80% baseline score.";
+            }
+
             const totalAvailableMs = totalItems * CONFIG.SEC_PER_QUESTION * 1000;
             const actualElapsedMs = Math.max(0, totalAvailableMs - state.pausedRemainingMs);
             durationText.textContent = formatTime(Math.round(actualElapsedMs / 1000));
 
-            reviewBtn.addEventListener("click", () => eventBus.emit("ENTER_REVIEW"));
+            // If zero errors, safely disable the dashboard review link block
+            if (correctCount === totalItems) {
+                reviewBtn.disabled = true;
+                reviewBtn.textContent = "No Errors to Review";
+            } else {
+                reviewBtn.addEventListener("click", () => eventBus.emit("ENTER_REVIEW"));
+            }
+            
             restartBtn.addEventListener("click", () => eventBus.emit("RESTART_SESSION"));
 
             this.root.appendChild(fragment);
@@ -468,9 +491,7 @@
         },
 
         registerGlobalKeyboardRouter() {
-            // Setup an optimized single listener router across the active execution context
             window.addEventListener("keydown", (e) => {
-                // Safeguard interactions when capturing context inputs from editable form controls
                 if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.isContentEditable) {
                     return;
                 }
@@ -490,7 +511,6 @@
                         break;
 
                     case "in_progress":
-                        // Capture shortcut variations for options mapping cleanly
                         if (keyParsed === "1" || lowerKey === "a") {
                             e.preventDefault();
                             this.selectAnswerByOffsetIndex(0);
@@ -588,15 +608,9 @@
             timerManager.start(
                 (remainingMs) => {
                     const timerText = document.getElementById("quiz-timer");
-                    const progressBar = document.getElementById("quiz-progress-bar");
-                    
-                    if (timerText && progressBar && STATE.phase === "in_progress") {
+                    if (timerText && STATE.phase === "in_progress") {
                         const currentRemainingSec = Math.ceil(remainingMs / 1000);
                         timerText.textContent = formatTime(currentRemainingSec);
-
-                        const totalAllocatedSec = STATE.selectedQuestions.length * CONFIG.SEC_PER_QUESTION;
-                        const pctRatio = totalAllocatedSec > 0 ? (remainingMs / (totalAllocatedSec * 1000)) * 100 : 0;
-                        progressBar.style.width = `${pctRatio}%`;
                     }
                 },
                 () => {
