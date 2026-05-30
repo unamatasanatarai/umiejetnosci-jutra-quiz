@@ -200,12 +200,15 @@ body {
     margin-bottom: 24px;
 }
 
-/* Functional Input Selectors */
+/* Functional Input Selectors with Keyboard Indicators */
 .choice-item {
     background-color: var(--color-surface);
     border: 2px solid #e2e8f0;
     border-radius: 8px;
     padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-align: left;
     font-size: 15px;
     font-weight: 500;
@@ -214,9 +217,43 @@ body {
     width: 100%;
 }
 
+.choice-text-wrapper {
+    flex-grow: 1;
+    padding-right: 12px;
+}
+
 .choice-item:hover:not(:disabled) {
     border-color: #cbd5e1;
     background-color: #f8fafc;
+}
+
+/* Keyboard Badge Styling Treatment */
+.kbd-badge {
+    background-color: #f1f5f9;
+    color: var(--color-text-muted);
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0.75;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    user-select: none;
+}
+
+/* Adaptive Coloring for Modifiers within Dark/Light Elements */
+.btn-primary .kbd-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
 }
 
 /* Correctness State Modifications */
@@ -227,6 +264,12 @@ body {
     font-weight: 600;
 }
 
+.choice-item.correct .kbd-badge {
+    background-color: rgba(46, 125, 50, 0.15);
+    color: var(--color-success);
+    border-color: rgba(46, 125, 50, 0.25);
+}
+
 .choice-item.incorrect {
     border-color: var(--color-error) !important;
     background-color: #ffebee !important;
@@ -234,8 +277,14 @@ body {
     font-weight: 600;
 }
 
+.choice-item.incorrect .kbd-badge {
+    background-color: rgba(198, 40, 40, 0.15);
+    color: var(--color-error);
+    border-color: rgba(198, 40, 40, 0.25);
+}
+
 .choice-item.faded {
-    opacity: 0.5;
+    opacity: 0.4;
     border-color: #e2e8f0;
     background-color: #f1f5f9;
     color: var(--color-faded);
@@ -259,6 +308,7 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    gap: 8px;
 }
 
 .btn-primary {
@@ -328,6 +378,10 @@ body {
     margin-top: 24px;
     border-top: 1px solid #e2e8f0;
     padding-top: 16px;
+}
+
+.review-footer .btn {
+    gap: 6px;
 }
 
 .review-empty-state {

@@ -43,8 +43,14 @@
             </div>
 
             <div class="actions-container">
-                <button id="btn-start-quiz" class="btn btn-primary">Start Quiz</button>
-                <button id="btn-cancel-ready" class="btn btn-secondary">Cancel</button>
+                <button id="btn-start-quiz" class="btn btn-primary">
+                    <span>Start Quiz</span>
+                    <kbd class="kbd-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 10l-5 5 5 5M4 15h11a4 4 0 0 0 4-4V5"/></svg></kbd>
+                </button>
+                <button id="btn-cancel-ready" class="btn btn-secondary">
+                    <span>Cancel</span>
+                    <kbd class="kbd-badge">Esc</kbd>
+                </button>
             </div>
         </div>
     </template>
@@ -66,7 +72,10 @@
             </div>
 
             <div class="quiz-footer">
-                <button id="btn-next-question" class="btn btn-primary invisible">Next Question</button>
+                <button id="btn-next-question" class="btn btn-primary invisible">
+                    <span id="next-btn-text">Next Question</span>
+                    <kbd class="kbd-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 10l-5 5 5 5M4 15h11a4 4 0 0 0 4-4V5"/></svg></kbd>
+                </button>
             </div>
         </div>
     </template>
@@ -116,9 +125,18 @@
             </div>
 
             <div class="review-footer">
-                <button id="btn-prev-review" class="btn btn-secondary">Previous</button>
-                <button id="btn-next-review" class="btn btn-secondary">Next</button>
-                <button id="btn-exit-review" class="btn btn-primary">Exit Review</button>
+                <button id="btn-prev-review" class="btn btn-secondary">
+                    <kbd class="kbd-badge">←</kbd> <kbd class="kbd-badge">H</kbd>
+                    <span>Previous</span>
+                </button>
+                <button id="btn-next-review" class="btn btn-secondary">
+                    <span>Next</span>
+                    <kbd class="kbd-badge">L</kbd> <kbd class="kbd-badge">→</kbd>
+                </button>
+                <button id="btn-exit-review" class="btn btn-primary">
+                    <span>Exit Review</span>
+                    <kbd class="kbd-badge">Esc</kbd>
+                </button>
             </div>
         </div>
     </template>

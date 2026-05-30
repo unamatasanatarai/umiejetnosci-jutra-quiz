@@ -1,6 +1,6 @@
 /**
  * Interactive Local Quiz Application - Authoritative Client Engine
- * Implements strict specifications from HLD, PRD, and Task Breakdowns.
+ * Integrates Global Keyboard Navigation Interceptors and Inline Shortcut Badging.
  */
 
 (function () {
@@ -96,7 +96,6 @@
                     throw new TypeError(`Item at structural offset index ${i} is not valid object configuration.`);
                 }
 
-                // Check required elements
                 const requiredFields = ["question", "a", "b", "c", "d", "correct"];
                 for (let f = 0; f < requiredFields.length; f++) {
                     const field = requiredFields[f];
@@ -108,7 +107,6 @@
                     }
                 }
 
-                // Check enumeration parameters
                 if (!CONFIG.ALLOWED_CHOICES.includes(item.correct.toLowerCase())) {
                     throw new ValueError(`Property field constraint "correct" must contain elements from target set [a,b,c,d] at item index ${i}.`);
                 }
@@ -117,7 +115,6 @@
         }
     };
 
-    // Custom errors to separate logical constraints cleanly
     function ValueError(message) {
         this.name = 'ValueError';
         this.message = message;
@@ -131,22 +128,14 @@
     // ==========================================
     const questionManager = {
         processAndNormalize(rawData) {
-            // Sever reference pointers completely using explicit deep copying
             const copiedSource = JSON.parse(JSON.stringify(rawData));
-            
-            // Randomize position locations of the master input repository layout
             const shuffledMaster = shuffleArray(copiedSource);
-            
-            // Limit processing pool slice allocation parameters
             const sliceLimit = Math.min(shuffledMaster.length, CONFIG.MAX_QUESTIONS);
             const operationPool = shuffledMaster.slice(0, sliceLimit);
 
-            // Construct normalized functional definitions
             return operationPool.map(raw => {
                 const choicesArray = [raw.a, raw.b, raw.c, raw.d];
                 const originalCorrectValue = raw[raw.correct.toLowerCase()];
-                
-                // Shuffle secondary individual choices presentation maps
                 const shuffledChoices = shuffleArray([...choicesArray]);
 
                 return {
@@ -175,7 +164,7 @@
                     this.stop();
                     onTimeout();
                 }
-            }, 250); // High precision sub-interval tick rate prevents background clock frame skips
+            }, 250);
         },
         stop() {
             if (STATE.timerInterval) {
@@ -199,7 +188,6 @@
         },
 
         render(frozenState) {
-            // Clear current layout context nodes completely to maintain clean state structures
             this.root.textContent = "";
 
             switch (frozenState.phase) {
@@ -238,12 +226,10 @@
             const fileInput = fragment.getElementById("file-input");
             const errorBanner = fragment.getElementById("error-banner");
 
-            // Direct binding layout configurations
             if (state.fileErrorFlag) {
                 errorBanner.classList.remove("hidden");
             }
 
-            // Bind native processing event actions
             fileInput.addEventListener("change", (e) => {
                 const file = e.target.files[0];
                 if (file) eventBus.emit("FILE_SELECTED", file);
@@ -270,7 +256,6 @@
 
         renderReadyScreen(state) {
             const fragment = this.cloneTemplate("tpl-ready");
-            
             const countNode = fragment.getElementById("ready-count");
             const timeNode = fragment.getElementById("ready-time");
             const startBtn = fragment.getElementById("btn-start-quiz");
@@ -290,22 +275,28 @@
 
         renderQuizScreen(state) {
             const fragment = this.cloneTemplate("tpl-quiz");
-            
             const progressText = fragment.getElementById("quiz-progress-text");
             const timerText = fragment.getElementById("quiz-timer");
             const progressBar = fragment.getElementById("quiz-progress-bar");
             const questionText = fragment.getElementById("question-text");
             const choicesGrid = fragment.getElementById("choices-grid");
             const nextBtn = fragment.getElementById("btn-next-question");
+            const nextBtnText = fragment.getElementById("next-btn-text");
 
             const currentIndex = state.currentQuestionIndex;
             const currentQuestion = state.selectedQuestions[currentIndex];
+            const isLastQuestion = (currentIndex === state.selectedQuestions.length - 1);
 
-            // Setup title tracking values
             progressText.textContent = `Question ${currentIndex + 1} of ${state.selectedQuestions.length}`;
             questionText.textContent = currentQuestion.questionText;
 
-            // Compute countdown remaining calculations safely
+            // Apply dynamic contextual updates to the navigation button layout
+            if (isLastQuestion) {
+                nextBtnText.textContent = "Finish Quiz";
+            } else {
+                nextBtnText.textContent = "Next Question";
+            }
+
             const currentRemainingMs = state.phase === "feedback" ? state.pausedRemainingMs : Math.max(0, state.endTimestamp - Date.now());
             const currentRemainingSec = Math.ceil(currentRemainingMs / 1000);
             timerText.textContent = formatTime(currentRemainingSec);
@@ -314,17 +305,28 @@
             const pctRatio = totalAllocatedSec > 0 ? (currentRemainingMs / (totalAllocatedSec * 1000)) * 100 : 0;
             progressBar.style.width = `${pctRatio}%`;
 
-            // Enforce layout feedback properties mapping
             if (state.phase === "feedback") {
                 nextBtn.classList.remove("invisible");
                 choicesGrid.classList.add("context-locked");
             }
 
-            // Inject option lists using literal properties mapping safely via textContent
-            currentQuestion.choices.forEach(choiceString => {
+            currentQuestion.choices.forEach((choiceString, idx) => {
                 const btn = document.createElement("button");
                 btn.className = "choice-item";
-                btn.textContent = choiceString;
+
+                const txtSpan = document.createElement("span");
+                txtSpan.className = "choice-text-wrapper";
+                txtSpan.textContent = choiceString;
+                btn.appendChild(txtSpan);
+
+                // Add secondary interactive discovery indicators
+                const badgeKbd = document.createElement("kbd");
+                badgeKbd.className = "kbd-badge";
+                
+                const numIndex = idx + 1;
+                const alphaChar = String.fromCharCode(65 + idx); // Generates labels A through D
+                badgeKbd.textContent = `${numIndex}/${alphaChar}`;
+                btn.appendChild(badgeKbd);
 
                 if (state.phase === "feedback") {
                     btn.disabled = true;
@@ -339,7 +341,6 @@
                         btn.classList.add("faded");
                     }
                 } else {
-                    // Interactive active listening hookups
                     btn.addEventListener("click", () => {
                         eventBus.emit("ANSWER_SELECTED", choiceString);
                     });
@@ -357,14 +358,12 @@
 
         renderSummaryScreen(state) {
             const fragment = this.cloneTemplate("tpl-summary");
-            
             const pctText = fragment.getElementById("summary-percentage");
             const ratioText = fragment.getElementById("summary-ratio");
             const durationText = fragment.getElementById("summary-duration");
             const reviewBtn = fragment.getElementById("btn-review-mode");
             const restartBtn = fragment.getElementById("btn-restart-session");
 
-            // Compute success counts metrics
             let correctCount = 0;
             state.selectedQuestions.forEach(q => { if (q.isCorrect) correctCount++; });
             
@@ -374,7 +373,6 @@
             pctText.textContent = `${finalPercentage}%`;
             ratioText.textContent = `${correctCount} / ${totalItems}`;
 
-            // Format total active elapsed timing calculations
             const totalAvailableMs = totalItems * CONFIG.SEC_PER_QUESTION * 1000;
             const actualElapsedMs = Math.max(0, totalAvailableMs - state.pausedRemainingMs);
             durationText.textContent = formatTime(Math.round(actualElapsedMs / 1000));
@@ -387,12 +385,10 @@
 
         renderReviewScreen(state) {
             const fragment = this.cloneTemplate("tpl-review");
-            
             const progressText = fragment.getElementById("review-progress-text");
             const emptyState = fragment.getElementById("review-empty-state");
             const reviewBody = fragment.getElementById("review-body");
             const choicesGrid = fragment.getElementById("review-choices-grid");
-            
             const prevBtn = fragment.getElementById("btn-prev-review");
             const nextBtn = fragment.getElementById("btn-next-review");
             const exitBtn = fragment.getElementById("btn-exit-review");
@@ -410,11 +406,14 @@
                 const qTextNode = fragment.getElementById("review-question-text");
                 qTextNode.textContent = currentReviewQuestion.questionText;
 
-                // Build preserved configuration sequence
                 currentReviewQuestion.originalShuffledOrder.forEach(choiceString => {
                     const block = document.createElement("button");
                     block.className = "choice-item";
-                    block.textContent = choiceString;
+
+                    const txtSpan = document.createElement("span");
+                    txtSpan.className = "choice-text-wrapper";
+                    txtSpan.textContent = choiceString;
+                    block.appendChild(txtSpan);
                     block.disabled = true;
 
                     const isUserSelection = (choiceString === currentReviewQuestion.selectedAnswerValue);
@@ -444,12 +443,12 @@
     };
 
     // ==========================================
-    // 9. CENTRALIZED STATE LIFE LIFE CYCLE COORDINATOR
+    // 9. CENTRALIZED STATE LIFECYCLE COORDINATOR
     // ==========================================
     const sessionController = {
         init() {
             this.registerEventBindings();
-            // Perform system boot process
+            this.registerGlobalKeyboardRouter();
             this.routeToPhase("idle");
         },
 
@@ -466,6 +465,78 @@
             eventBus.on("NEXT_REVIEW_ITEM", () => this.handleReviewNavigation(1));
             eventBus.on("EXIT_REVIEW", () => this.routeToPhase("completed"));
             eventBus.on("RESTART_SESSION", () => this.handleSessionClearPurge());
+        },
+
+        registerGlobalKeyboardRouter() {
+            // Setup an optimized single listener router across the active execution context
+            window.addEventListener("keydown", (e) => {
+                // Safeguard interactions when capturing context inputs from editable form controls
+                if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.isContentEditable) {
+                    return;
+                }
+
+                const keyParsed = e.key;
+                const lowerKey = keyParsed.toLowerCase();
+
+                switch (STATE.phase) {
+                    case "ready":
+                        if (keyParsed === "Enter") {
+                            e.preventDefault();
+                            eventBus.emit("START_QUIZ");
+                        } else if (keyParsed === "Escape") {
+                            e.preventDefault();
+                            eventBus.emit("RESTART_SESSION");
+                        }
+                        break;
+
+                    case "in_progress":
+                        // Capture shortcut variations for options mapping cleanly
+                        if (keyParsed === "1" || lowerKey === "a") {
+                            e.preventDefault();
+                            this.selectAnswerByOffsetIndex(0);
+                        } else if (keyParsed === "2" || lowerKey === "b") {
+                            e.preventDefault();
+                            this.selectAnswerByOffsetIndex(1);
+                        } else if (keyParsed === "3" || lowerKey === "c") {
+                            e.preventDefault();
+                            this.selectAnswerByOffsetIndex(2);
+                        } else if (keyParsed === "4" || lowerKey === "d") {
+                            e.preventDefault();
+                            this.selectAnswerByOffsetIndex(3);
+                        }
+                        break;
+
+                    case "feedback":
+                        if (keyParsed === "Enter") {
+                            e.preventDefault();
+                            eventBus.emit("NEXT_QUESTION");
+                        }
+                        break;
+
+                    case "review":
+                        if (keyParsed === "ArrowLeft" || lowerKey === "h") {
+                            e.preventDefault();
+                            eventBus.emit("PREV_REVIEW_ITEM");
+                        } else if (keyParsed === "ArrowRight" || lowerKey === "l") {
+                            e.preventDefault();
+                            eventBus.emit("NEXT_REVIEW_ITEM");
+                        } else if (keyParsed === "Escape") {
+                            e.preventDefault();
+                            eventBus.emit("EXIT_REVIEW");
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            });
+        },
+
+        selectAnswerByOffsetIndex(index) {
+            const currentItem = STATE.selectedQuestions[STATE.currentQuestionIndex];
+            if (currentItem && currentItem.choices && currentItem.choices[index]) {
+                eventBus.emit("ANSWER_SELECTED", currentItem.choices[index]);
+            }
         },
 
         routeToPhase(targetPhase) {
@@ -488,7 +559,6 @@
             reader.onerror = () => {
                 eventBus.emit("FILE_REJECTED");
             };
-            // Enforce standard layout UTF-8 rules explicitly
             reader.readAsText(file, "UTF-8");
         },
 
@@ -498,7 +568,6 @@
             STATE.selectedQuestions = questionManager.processAndNormalize(rawData);
             STATE.currentQuestionIndex = 0;
             
-            // Calculate absolute global timer configurations ahead
             const totalAllocatedSec = STATE.selectedQuestions.length * CONFIG.SEC_PER_QUESTION;
             STATE.pausedRemainingMs = totalAllocatedSec * 1000;
 
@@ -512,14 +581,12 @@
 
         handleQuizCommencement() {
             STATE.startedAt = Date.now();
-            // Anchor hardware target anchor points
             STATE.endTimestamp = Date.now() + STATE.pausedRemainingMs;
             
             this.routeToPhase("in_progress");
 
             timerManager.start(
                 (remainingMs) => {
-                    // Local ticker updates screen variables directly avoiding full node replacement loops
                     const timerText = document.getElementById("quiz-timer");
                     const progressBar = document.getElementById("quiz-progress-bar");
                     
@@ -540,8 +607,6 @@
 
         handleAnswerSelection(choiceString) {
             timerManager.stop();
-            
-            // Preserve exact microsecond countdown balance snapshot instantly
             STATE.pausedRemainingMs = Math.max(0, STATE.endTimestamp - Date.now());
             
             const currentItem = STATE.selectedQuestions[STATE.currentQuestionIndex];
@@ -557,7 +622,6 @@
             if (STATE.currentQuestionIndex >= STATE.selectedQuestions.length) {
                 this.handleQuizCompletionSequence();
             } else {
-                // Re-anchor target milestones forward using saved data balance
                 STATE.endTimestamp = Date.now() + STATE.pausedRemainingMs;
                 this.routeToPhase("in_progress");
                 this.handleQuizCommencement();
@@ -568,11 +632,10 @@
             timerManager.stop();
             STATE.pausedRemainingMs = 0;
 
-            // Enforce authoritative completion properties over un-answered steps
             for (let i = STATE.currentQuestionIndex; i < STATE.selectedQuestions.length; i++) {
                 const item = STATE.selectedQuestions[i];
                 if (item.selectedAnswerValue === null) {
-                    item.selectedAnswerValue = ""; // Mark explicit blank configuration
+                    item.selectedAnswerValue = "";
                     item.isCorrect = false;
                 }
             }
@@ -586,7 +649,6 @@
         },
 
         handleReviewSubsystemEntry() {
-            // Extract and isolate incorrect elements exclusively
             STATE.reviewQuestions = STATE.selectedQuestions.filter(q => !q.isCorrect);
             STATE.reviewIndex = 0;
             this.routeToPhase("review");
@@ -603,7 +665,6 @@
         handleSessionClearPurge() {
             timerManager.stop();
             
-            // Reinitialize empty runtime configurations tracking allocations safely
             STATE = {
                 phase: "idle",
                 allQuestions: [],
@@ -622,7 +683,6 @@
         }
     };
 
-    // Initialize Viewport Mounting Configuration on DOM Content Ready
     document.addEventListener("DOMContentLoaded", () => {
         renderEngine.init("app-root");
         sessionController.init();
