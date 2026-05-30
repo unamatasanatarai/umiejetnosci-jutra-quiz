@@ -3,132 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Local Quiz Application</title>
+    <title>Quizzer - Umiejętności Jutra</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="floating-controls-container">
+        <div class="lang-dropdown" id="lang-dropdown-ui">
+            <button class="lang-dropbtn" id="btn-lang-active" aria-label="Select Language">
+                <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                    <clipPath id="a"><path d="M0 0h60v30H0z"/></clipPath>
+                    <g clip-path="url(#a)">
+                    <path d="M0 0h60v30H0z" fill="#012169"/>
+                    <path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/>
+                    <path d="M0 0l60 30M60 0L0 30" stroke="#c8102e" stroke-width="4"/>
+                    <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+                    <path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/>
+                    </g>
+                </svg>
+            </button>
+            <div class="lang-dropdown-content">
+                <button data-lang-target="en" title="English">
+                    <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                        <path d="M0 0h60v30H0z" fill="#012169"/>
+                        <path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/>
+                        <path d="M0 0l60 30M60 0L0 30" stroke="#c8102e" stroke-width="4"/>
+                        <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+                        <path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button data-lang-target="pl" title="Polski">
+                    <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10">
+                        <rect width="16" height="10" fill="#fff"/>
+                        <rect width="16" height="5" y="5" fill="#dc143c"/>
+                    </svg>
+                    <span>PL</span>
+                </button>
+            </div>
+        </div>
+
+        <a href="https://github.com/unamatasanatarai/umiejetnosci-jutra-quiz" target="_blank" rel="noopener noreferrer" class="github-float-link" aria-label="View source code on GitHub">
+            <svg class="github-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+        </a>
+    </div>
     <div id="app-root"></div>
 
-    <!-- IDLE SCREEN TEMPLATE -->
     <template id="tpl-idle">
         <div class="card idle-container">
-            <h1 class="title">Interactive Local Quiz</h1>
-            <p class="subtitle">Upload a quiz JSON file to instantly start your secure, offline assessment session.</p>
-            
+            <h1 id="lbl-idle-title" class="title"></h1>
+            <p id="lbl-idle-subtitle" class="subtitle"></p>
+
             <div id="drop-zone" class="drop-zone">
                 <svg class="icon-upload" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                <p>Drag and drop your quiz file here or click to browse</p>
+                <p id="lbl-idle-dropzone"></p>
                 <input type="file" id="file-input" accept=".json" class="file-input">
             </div>
 
             <div id="error-banner" class="error-banner hidden">
-                <span id="error-message">Oops — invalid file 😅</span>
+                <span id="error-message"></span>
             </div>
         </div>
     </template>
 
-    <!-- READY SCREEN TEMPLATE -->
     <template id="tpl-ready">
         <div class="card ready-container">
-            <h1 class="title">Quiz Structure Approved</h1>
-            <p class="subtitle">Your localized configuration payload has been safely normalized and isolated.</p>
-            
+            <h1 id="lbl-ready-title" class="title"></h1>
+            <p id="lbl-ready-subtitle" class="subtitle"></p>
+
             <div class="metrics-grid">
                 <div class="metric-card">
-                    <span class="metric-label">Allocated Questions</span>
+                    <span id="lbl-ready-allocated" class="metric-label"></span>
                     <span id="ready-count" class="metric-value">0</span>
                 </div>
                 <div class="metric-card">
-                    <span class="metric-label">Total Time Budget</span>
+                    <span id="lbl-ready-budget" class="metric-label"></span>
                     <span id="ready-time" class="metric-value">0:00</span>
                 </div>
             </div>
 
             <div class="actions-split-grid">
                 <button id="btn-cancel-ready" class="btn btn-secondary">
-                    <span>Cancel</span>
+                    <span id="lbl-ready-btn-cancel"></span>
                     <kbd class="kbd-badge">Esc</kbd>
                 </button>
                 <button id="btn-start-quiz" class="btn btn-primary">
-                    <span>Start Quiz</span>
+                    <span id="lbl-ready-btn-start"></span>
                     <kbd class="kbd-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 10l-5 5 5 5M4 15h11a4 4 0 0 0 4-4V5"/></svg></kbd>
                 </button>
             </div>
         </div>
     </template>
 
-    <!-- QUIZ SCREEN TEMPLATE -->
     <template id="tpl-quiz">
         <div class="card quiz-container">
             <div class="quiz-header">
-                <span id="quiz-progress-text" class="quiz-progress-text">Question 1 of 50</span>
+                <span id="quiz-progress-text" class="quiz-progress-text"></span>
                 <span id="quiz-timer" class="quiz-timer">00:00</span>
             </div>
-            
+
             <div class="progress-bar-container">
                 <div id="quiz-progress-bar" class="progress-bar" style="width: 0%;"></div>
             </div>
 
             <div class="question-body">
-                <h2 id="question-text" class="question-text">Question string layout context placeholder?</h2>
+                <h2 id="question-text" class="question-text"></h2>
                 <div id="choices-grid" class="choices-grid"></div>
             </div>
 
             <div class="quiz-footer">
                 <button id="btn-next-question" class="btn btn-primary invisible">
-                    <span id="next-btn-text">Next Question</span>
+                    <span id="next-btn-text"></span>
                     <kbd class="kbd-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 10l-5 5 5 5M4 15h11a4 4 0 0 0 4-4V5"/></svg></kbd>
                 </button>
             </div>
         </div>
     </template>
 
-    <!-- SUMMARY SCREEN TEMPLATE -->
     <template id="tpl-summary">
         <div class="card summary-container">
-            <h1 class="title">Session Completed</h1>
-            <p class="subtitle">Your ephemeral assessment metrics have been compiled successfully.</p>
-            
+            <h1 id="lbl-summary-title" class="title"></h1>
+
             <div id="summary-score-hero" class="score-hero">
                 <div class="score-ring">
                     <span id="summary-percentage" class="score-pct">0%</span>
-                    <span id="summary-status-badge" class="status-badge">Status</span>
+                    <span id="summary-status-badge" class="status-badge"></span>
                 </div>
-                <p id="summary-status-msg" class="status-message">Feedback text block goes here.</p>
+                <p id="summary-status-msg" class="status-message"></p>
             </div>
 
             <div class="metrics-grid">
                 <div class="metric-card">
-                    <span class="metric-label">Correct Answers</span>
+                    <span id="lbl-summary-correct" class="metric-label"></span>
                     <span id="summary-ratio" class="metric-value">0 / 0</span>
                 </div>
                 <div class="metric-card">
-                    <span class="metric-label">Elapsed Duration</span>
+                    <span id="lbl-summary-duration" class="metric-label"></span>
                     <span id="summary-duration" class="metric-value">00:00</span>
                 </div>
             </div>
 
             <div class="actions-split-grid">
-                <button id="btn-review-mode" class="btn btn-primary">Review Incorrect Answers</button>
-                <button id="btn-restart-session" class="btn btn-secondary">Restart Session</button>
+                <button id="btn-review-mode" class="btn btn-primary"></button>
+                <button id="btn-restart-session" class="btn btn-secondary"></button>
             </div>
         </div>
     </template>
 
-    <!-- REVIEW SCREEN TEMPLATE -->
     <template id="tpl-review">
         <div class="card review-container">
             <div class="review-header">
-                <h1 class="title-sm">Review Mode</h1>
-                <span id="review-progress-text" class="review-progress-text">Error 1 of 1</span>
+                <h1 id="lbl-review-title" class="title-sm"></h1>
+                <span id="review-progress-text" class="review-progress-text"></span>
             </div>
-            
+
             <div id="review-empty-state" class="review-empty-state hidden">
-                <p>Perfect score achieved! There are no incorrect answers to review. 🎉</p>
+                <p id="lbl-review-empty"></p>
             </div>
 
             <div id="review-body" class="question-body">
-                <h2 id="review-question-text" class="question-text">Question text context placeholder?</h2>
+                <h2 id="review-question-text" class="question-text"></h2>
                 <div id="review-choices-grid" class="choices-grid context-locked"></div>
             </div>
 
@@ -136,15 +171,15 @@
                 <div class="review-nav-group">
                     <button id="btn-prev-review" class="btn btn-secondary">
                         <kbd class="kbd-badge">←</kbd> <kbd class="kbd-badge">H</kbd>
-                        <span>Previous</span>
+                        <span id="lbl-review-btn-prev"></span>
                     </button>
                     <button id="btn-next-review" class="btn btn-secondary">
-                        <span>Next</span>
+                        <span id="lbl-review-btn-next"></span>
                         <kbd class="kbd-badge">L</kbd> <kbd class="kbd-badge">→</kbd>
                     </button>
                 </div>
                 <button id="btn-exit-review" class="btn btn-primary">
-                    <span>Exit Review</span>
+                    <span id="lbl-review-btn-exit"></span>
                     <kbd class="kbd-badge">Esc</kbd>
                 </button>
             </div>
