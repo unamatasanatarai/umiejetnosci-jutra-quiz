@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Local Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app-root"></div>
+
+    <template id="tpl-idle">
+        <div class="card idle-container">
+            <h1 class="title">Interactive Local Quiz</h1>
+            <p class="subtitle">Upload a quiz JSON file to instantly start your secure, offline assessment session.</p>
+            
+            <div id="drop-zone" class="drop-zone">
+                <svg class="icon-upload" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <p>Drag and drop your quiz file here or click to browse</p>
+                <input type="file" id="file-input" accept=".json" class="file-input">
+            </div>
+
+            <div id="error-banner" class="error-banner hidden">
+                <span id="error-message">Oops — invalid file 😅</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-ready">
+        <div class="card ready-container">
+            <h1 class="title">Quiz Structure Approved</h1>
+            <p class="subtitle">Your localized configuration payload has been safely normalized and isolated.</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-label">Allocated Questions</span>
+                    <span id="ready-count" class="metric-value">0</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Total Time Budget</span>
+                    <span id="ready-time" class="metric-value">0:00</span>
+                </div>
+            </div>
+
+            <div class="actions-container">
+                <button id="btn-start-quiz" class="btn btn-primary">Start Quiz</button>
+                <button id="btn-cancel-ready" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-quiz">
+        <div class="card quiz-container">
+            <div class="quiz-header">
+                <span id="quiz-progress-text" class="quiz-progress-text">Question 1 of 50</span>
+                <span id="quiz-timer" class="quiz-timer">00:00</span>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div id="quiz-progress-bar" class="progress-bar" style="width: 100%;"></div>
+            </div>
+
+            <div class="question-body">
+                <h2 id="question-text" class="question-text">Question string layout context placeholder?</h2>
+                <div id="choices-grid" class="choices-grid"></div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="btn-next-question" class="btn btn-primary invisible">Next Question</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-summary">
+        <div class="card summary-container">
+            <h1 class="title">Session Completed</h1>
+            <p class="subtitle">Your ephemeral assessment metrics have been compiled successfully.</p>
+            
+            <div class="score-display">
+                <span id="summary-percentage" class="score-pct">0%</span>
+                <span class="score-label">Aggregate Score</span>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-label">Correct Answers</span>
+                    <span id="summary-ratio" class="metric-value">0 / 0</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Elapsed Duration</span>
+                    <span id="summary-duration" class="metric-value">00:00</span>
+                </div>
+            </div>
+
+            <div class="actions-vertical">
+                <button id="btn-review-mode" class="btn btn-primary">Review Incorrect Answers</button>
+                <button id="btn-restart-session" class="btn btn-secondary">Restart Session</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-review">
+        <div class="card review-container">
+            <div class="review-header">
+                <h1 class="title-sm">Review Mode</h1>
+                <span id="review-progress-text" class="review-progress-text">Error 1 of 1</span>
+            </div>
+            
+            <div id="review-empty-state" class="review-empty-state hidden">
+                <p>Perfect score achieved! There are no incorrect answers to review. 🎉</p>
+            </div>
+
+            <div id="review-body" class="question-body">
+                <h2 id="review-question-text" class="question-text">Question text context placeholder?</h2>
+                <div id="review-choices-grid" class="choices-grid context-locked"></div>
+            </div>
+
+            <div class="review-footer">
+                <button id="btn-prev-review" class="btn btn-secondary">Previous</button>
+                <button id="btn-next-review" class="btn btn-secondary">Next</button>
+                <button id="btn-exit-review" class="btn btn-primary">Exit Review</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
